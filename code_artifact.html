@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المسار السريع للتختيم | الثقافة الإسلامية ٢ (٢١١ سؤال)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Tajawal & Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'Cairo', 'sans-serif'],
+                        heading: ['Cairo', 'Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            850: '#064e3b',
+                            950: '#022c22',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        h1, h2, h3, h4, .font-cairo {
+            font-family: 'Cairo', sans-serif;
+        }
+        /* Islamic Geometric Pattern Overlay */
+        .islamic-bg {
+            background-color: #064e3b;
+            background-image: radial-gradient(#d97706 0.75px, transparent 0.75px), radial-gradient(#10b981 0.75px, #064e3b 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+        .dark .islamic-bg {
+            background-color: #022c22;
+            background-image: radial-gradient(#d97706 0.6px, transparent 0.6px), radial-gradient(#059669 0.6px, #022c22 0.6px);
+        }
+        /* 3D Flashcard Flip */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #059669;
+        }
+        /* Pulse & Pop Animations */
+        @keyframes popIn {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-pop {
+            animation: popIn 0.25s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300">
+
+    <!-- Top Header & Hero -->
+    <header class="islamic-bg text-white shadow-xl border-b-4 border-amber-500 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <!-- Title & Badge -->
+                <div class="flex items-center gap-4 text-center md:text-right">
+                    <div class="w-16 h-16 rounded-2xl bg-amber-500/20 border-2 border-amber-400 flex items-center justify-center shadow-lg shrink-0">
+                        <i class="fa-solid fa-mosque text-3xl text-amber-400"></i>
+                    </div>
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold mb-1">
+                            <i class="fa-solid fa-bolt"></i> المسار السريع للتختيم • FAST LANE
+                        </div>
+                        <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-white">
+                            الثقافة الإسلامية ٢ <span class="text-amber-400 text-lg sm:text-xl font-bold">(٢١١ سؤالاً كاملاً)</span>
+                        </h1>
+                        <p class="text-emerald-100/80 text-sm mt-0.5">
+                            شامل ١٤٢ سؤال صح وخطأ + ٦٩ سؤال اختيار من متعدد مع الشروحات والتركات
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Top Controls (Audio, Dark Mode, Reset) -->
+                <div class="flex items-center gap-2.5 flex-wrap justify-center">
+                    <button onclick="toggleSound()" id="soundBtn" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-sm font-bold flex items-center gap-2 transition" title="تشغيل/كتم المؤثرات الصوتية">
+                        <i id="soundIcon" class="fa-solid fa-volume-high text-amber-400"></i>
+                        <span class="hidden sm:inline">الصوت</span>
+                    </button>
+                    <button onclick="toggleDarkMode()" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-sm font-bold flex items-center gap-2 transition" title="الوضع الليلي / النهاري">
+                        <i id="themeIcon" class="fa-solid fa-moon text-amber-300"></i>
+                        <span id="themeText" class="hidden sm:inline">الوضع الليلي</span>
+                    </button>
+                    <button onclick="openResetModal()" class="px-3.5 py-2 rounded-xl bg-red-500/20 hover:bg-red-500/30 border border-red-400/30 text-red-200 text-sm font-bold flex items-center gap-2 transition" title="تصفير التقدم">
+                        <i class="fa-solid fa-rotate-right"></i>
+                        <span class="hidden sm:inline">تصفير التقدم</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Live Progress & Stats Bar -->
+            <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 bg-black/25 backdrop-blur-md p-3.5 rounded-2xl border border-white/10">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300 text-lg">
+                        <i class="fa-solid fa-check-double"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-emerald-200/80">تم إتقانها</div>
+                        <div class="text-lg font-black text-white"><span id="statMastered">0</span> <span class="text-xs font-normal text-emerald-300">/ 211</span></div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 px-2">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-300 text-lg">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-emerald-200/80">مهمة / للمراجعة</div>
+                        <div class="text-lg font-black text-white" id="statStarred">0</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 px-2">
+                    <div class="w-10 h-10 rounded-xl bg-rose-500/20 border border-rose-400/30 flex items-center justify-center text-rose-300 text-lg">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-emerald-200/80">صندوق الأخطاء</div>
+                        <div class="text-lg font-black text-white" id="statMistakes">0</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center px-2">
+                    <div class="flex justify-between text-xs mb-1">
+                        <span class="text-amber-300 font-bold">نسبة التختيم</span>
+                        <span id="statPercent" class="font-black text-white">0%</span>
+                    </div>
+                    <div class="w-full h-2.5 bg-white/10 rounded-full overflow-hidden">
+                        <div id="progressBar" class="h-full bg-gradient-to-l from-amber-400 to-emerald-400 rounded-full transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs (Modes) -->
+    <nav class="sticky top-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto py-2.5 no-scrollbar">
+                <button onclick="switchMode('study')" id="tab-study" class="mode-tab active-tab px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 shrink-0 transition">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>المذاكرة والتصفح (٢١١)</span>
+                </button>
+                <button onclick="switchMode('quiz')" id="tab-quiz" class="mode-tab px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 shrink-0 transition">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>الاختبار التفاعلي الذكي</span>
+                </button>
+                <button onclick="switchMode('flashcards')" id="tab-flashcards" class="mode-tab px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 shrink-0 transition">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>البطاقات التعليمية</span>
+                </button>
+                <button onclick="switchMode('speed')" id="tab-speed" class="mode-tab px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 shrink-0 transition">
+                    <i class="fa-solid fa-bolt text-amber-500"></i>
+                    <span>تحدي الـ ٦٠ ثانية</span>
+                </button>
+                <button onclick="switchMode('traps')" id="tab-traps" class="mode-tab px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 shrink-0 transition">
+                    <i class="fa-solid fa-lightbulb text-amber-500"></i>
+                    <span>ملخص التركات والفخاخ</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full">
+
+        <!-- ========================================== -->
+        <!-- MODE 1: STUDY & BROWSE ALL 211 QUESTIONS   -->
+        <!-- ========================================== -->
+        <section id="mode-study" class="space-y-6">
+            <!-- Filters & Search Toolbar -->
+            <div class="bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 space-y-4">
+                <div class="flex flex-col md:flex-row gap-3 justify-between">
+                    <!-- Search Input -->
+                    <div class="relative flex-1">
+                        <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="searchInput" oninput="renderStudyList()" placeholder="ابحث برقم السؤال (مثلاً: 145) أو بأي كلمة مفتاحية (مثل: الإخلاص، التلاوة، ابن عباس)..." class="w-full pr-11 pl-10 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm font-medium">
+                        <button onclick="clearSearch()" id="clearSearchBtn" class="hidden absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </button>
+                    </div>
+
+                    <!-- Self-Test Toggle (Hide/Show Answers) -->
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button onclick="toggleHideAnswers()" id="toggleAnswersBtn" class="px-4 py-3 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-500/30 font-bold text-sm flex items-center gap-2 transition">
+                            <i class="fa-solid fa-eye-slash" id="toggleAnswersIcon"></i>
+                            <span id="toggleAnswersText">إخفاء الإجابات لاختبار نفسك</span>
+                        </button>
+                        <button onclick="markAllCurrentFilterMastered()" class="px-3.5 py-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 font-bold text-sm flex items-center gap-2 transition" title="تحديد المعروض كمتقن">
+                            <i class="fa-solid fa-check-double"></i>
+                            <span class="hidden sm:inline">إتقان الكل</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Category Filter Pills -->
+                <div class="flex items-center gap-2 flex-wrap pt-1 border-t border-slate-100 dark:border-slate-800">
+                    <span class="text-xs font-bold text-slate-400 ml-1"><i class="fa-solid fa-filter ml-1"></i>تصفية:</span>
+                    <button onclick="setStudyFilter('all')" id="filter-all" class="filter-pill px-3 py-1.5 rounded-lg text-xs font-bold transition">الكل (٢١١)</button>
+                    <button onclick="setStudyFilter('tf-false')" id="filter-tf-false" class="filter-pill px-3 py-1.5 rounded-lg text-xs font-bold transition">صح وخطأ: إجابتها «خطأ» (١-٦٦)</button>
+                    <button onclick="setStudyFilter('tf-true')" id="filter-tf-true" class="filter-pill px-3 py-1.5 rounded-lg text-xs font-bold transition">صح وخطأ: إجابتها «صواب» (٦٧-١٤٢)</button>
+                    <button onclick="setStudyFilter('mcq')" id="filter-mcq" class="filter-pill px-3 py-1.5 rounded-lg text-xs font-bold transition">اختيار من متعدد (١٤٣-٢١١)</button>
+                    <button onclick="setStudyFilter('starred')" id="filter-starred" class="filter-pill px-3 py-1.5 rounded-lg text-xs font-bold transition">⭐ المميزة بنجمة (<span id="pillStarCount">0</span>)</button>
+                    <button onclick="setStudyFilter('mistakes')" id="filter-mistakes" class="filter-pill px-3 py-1.5 rounded-lg text-xs font-bold transition">⚠️ صندوق الأخطاء (<span id="pillMistakeCount">0</span>)</button>
+                    <button onclick="setStudyFilter('unmastered')" id="filter-unmastered" class="filter-pill px-3 py-1.5 rounded-lg text-xs font-bold transition">⏳ غير متقنة بعد (<span id="pillUnmasteredCount">211</span>)</button>
+                </div>
+
+                <!-- Quick Jump by Number Range -->
+                <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 pt-1">
+                    <div>عدد الأسئلة المعروضة: <span id="shownCount" class="font-bold text-emerald-600 dark:text-emerald-400">211</span> سؤال</div>
+                    <div class="flex items-center gap-1.5 flex-wrap">
+                        <span>قفز سريع للسؤال:</span>
+                        <input type="number" id="jumpInput" min="1" max="211" placeholder="1-211" onkeydown="if(event.key==='Enter') jumpToQuestion()" class="w-16 px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-center font-bold">
+                        <button onclick="jumpToQuestion()" class="px-2.5 py-1 rounded bg-emerald-600 text-white font-bold hover:bg-emerald-700">اذهب</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Questions List Container -->
+            <div id="studyListContainer" class="space-y-4"></div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- MODE 2: INTERACTIVE SMART QUIZ MODE        -->
+        <!-- ========================================== -->
+        <section id="mode-quiz" class="hidden space-y-6">
+            <!-- Quiz Setup Panel -->
+            <div id="quizSetupPanel" class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 max-w-3xl mx-auto">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl mx-auto mb-3">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h2 class="text-2xl font-black">إعداد الاختبار التفاعلي الذكي</h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">
+                        اختر القسم وعدد الأسئلة، وننصحك بتفعيل <strong>«خلط الأسئلة عشوائياً»</strong> لأن الملزمة مرتبة (الخطأ أولاً ثم الصواب)!
+                    </p>
+                </div>
+
+                <div class="space-y-5">
+                    <!-- Source Selection -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700 dark:text-slate-300">١. اختر نطاق الأسئلة:</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <button onclick="selectQuizSource('all')" id="qsrc-all" class="qsrc-btn p-3.5 rounded-xl border-2 text-right font-bold text-sm flex items-center justify-between transition">
+                                <span>📚 شامل جميع الأسئلة (١ - ٢١١)</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 text-xs">211</span>
+                            </button>
+                            <button onclick="selectQuizSource('tf-all')" id="qsrc-tf-all" class="qsrc-btn p-3.5 rounded-xl border-2 text-right font-bold text-sm flex items-center justify-between transition">
+                                <span>⚖️ جميع أسئلة الصح والخطأ (١ - ١٤٢)</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-500/10 text-xs">142</span>
+                            </button>
+                            <button onclick="selectQuizSource('tf-false')" id="qsrc-tf-false" class="qsrc-btn p-3.5 rounded-xl border-2 text-right font-bold text-sm flex items-center justify-between transition">
+                                <span>❌ أسئلة الخطأ والشروحات فقط (١ - ٦٦)</span>
+                                <span class="px-2 py-0.5 rounded bg-rose-500/10 text-rose-500 text-xs">66</span>
+                            </button>
+                            <button onclick="selectQuizSource('tf-true')" id="qsrc-tf-true" class="qsrc-btn p-3.5 rounded-xl border-2 text-right font-bold text-sm flex items-center justify-between transition">
+                                <span>✅ أسئلة الصواب فقط (٦٧ - ١٤٢)</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 text-xs">76</span>
+                            </button>
+                            <button onclick="selectQuizSource('mcq')" id="qsrc-mcq" class="qsrc-btn p-3.5 rounded-xl border-2 text-right font-bold text-sm flex items-center justify-between transition">
+                                <span>🎯 أسئلة الاختيار من متعدد (١٤٣ - ٢١١)</span>
+                                <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 text-xs">69</span>
+                            </button>
+                            <button onclick="selectQuizSource('mistakes')" id="qsrc-mistakes" class="qsrc-btn p-3.5 rounded-xl border-2 text-right font-bold text-sm flex items-center justify-between transition">
+                                <span>⚠️ صندوق أخطائي والمميزة بنجمة</span>
+                                <span id="qsrcSpecialCount" class="px-2 py-0.5 rounded bg-rose-500/10 text-rose-600 text-xs">0</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Count Selection -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-700 dark:text-slate-300">٢. عدد الأسئلة في الجلسة:</label>
+                        <div class="grid grid-cols-4 gap-2.5">
+                            <button onclick="selectQuizCount(15)" id="qcnt-15" class="qcnt-btn py-2.5 rounded-xl border-2 font-bold text-sm transition">١٥ سؤال</button>
+                            <button onclick="selectQuizCount(30)" id="qcnt-30" class="qcnt-btn py-2.5 rounded-xl border-2 font-bold text-sm transition">٣٠ سؤال</button>
+                            <button onclick="selectQuizCount(50)" id="qcnt-50" class="qcnt-btn py-2.5 rounded-xl border-2 font-bold text-sm transition">٥٠ سؤال</button>
+                            <button onclick="selectQuizCount(999)" id="qcnt-999" class="qcnt-btn py-2.5 rounded-xl border-2 font-bold text-sm transition">الكل كاملاً</button>
+                        </div>
+                    </div>
+
+                    <!-- Options (Shuffle & Instant Feedback) -->
+                    <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-3">
+                        <label class="flex items-center justify-between cursor-pointer">
+                            <div>
+                                <div class="font-bold text-sm">🔀 خلط ترتيب الأسئلة عشوائياً (مهم جداً!)</div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400">حتى لا تعتمد على ترتيب الملزمة وتختبر فهمك الحقيقي</div>
+                            </div>
+                            <input type="checkbox" id="quizShuffleToggle" checked class="w-5 h-5 accent-emerald-600 rounded cursor-pointer">
+                        </label>
+                    </div>
+
+                    <button onclick="startQuiz()" class="w-full py-4 rounded-2xl bg-gradient-to-l from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-black text-lg shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2 transition">
+                        <i class="fa-solid fa-play"></i>
+                        <span>ابدأ الاختبار الآن</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Active Quiz Arena -->
+            <div id="quizArena" class="hidden max-w-3xl mx-auto space-y-4">
+                <!-- Quiz Top Bar -->
+                <div class="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex items-center gap-3">
+                        <button onclick="quitQuiz()" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-rose-500/10 hover:text-rose-600 text-xs font-bold transition">
+                            <i class="fa-solid fa-arrow-right ml-1"></i> إنهاء والعودة
+                        </button>
+                        <span class="text-sm font-bold">السؤال <span id="quizCurrentIdx" class="text-emerald-600 dark:text-emerald-400 font-black">1</span> من <span id="quizTotalCount">20</span></span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-black flex items-center gap-1.5">
+                            <i class="fa-solid fa-fire"></i> سلسلة: <span id="quizStreak">0</span>
+                        </div>
+                        <div class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-black">
+                            ✓ <span id="quizRightCount">0</span>
+                        </div>
+                        <div class="px-3 py-1 rounded-full bg-rose-500/10 text-rose-600 dark:text-rose-400 text-xs font-black">
+                            ✗ <span id="quizWrongCount">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                    <div id="quizProgressBar" class="h-full bg-emerald-500 transition-all duration-300" style="width: 0%"></div>
+                </div>
+
+                <!-- Question Card -->
+                <div id="quizQuestionCard" class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl shadow-md border border-slate-200 dark:border-slate-800 space-y-6">
+                    <div class="flex items-center justify-between">
+                        <span id="quizBadge" class="px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 text-xs font-bold">سؤال #1</span>
+                        <button onclick="toggleStarCurrentQuiz()" id="quizStarBtn" class="text-slate-400 hover:text-amber-400 text-xl transition" title="إضافة للمفضلة">
+                            <i class="fa-regular fa-star"></i>
+                        </button>
+                    </div>
+
+                    <h3 id="quizQuestionText" class="text-xl sm:text-2xl font-bold leading-relaxed"></h3>
+
+                    <!-- Options Container -->
+                    <div id="quizOptionsContainer" class="space-y-3"></div>
+
+                    <!-- Explanation Box (Revealed on Answer) -->
+                    <div id="quizExplanationBox" class="hidden p-4 rounded-2xl border space-y-1 animate-pop">
+                        <div id="quizFeedbackTitle" class="font-black text-base flex items-center gap-2"></div>
+                        <p id="quizExplanationText" class="text-sm leading-relaxed"></p>
+                    </div>
+
+                    <!-- Next Button -->
+                    <div id="quizNextWrapper" class="hidden pt-2">
+                        <button onclick="nextQuizQuestion()" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-base flex items-center justify-center gap-2 transition">
+                            <span>السؤال التالي</span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Results Panel -->
+            <div id="quizResultPanel" class="hidden bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-md border border-slate-200 dark:border-slate-800 max-w-2xl mx-auto text-center space-y-6 animate-pop">
+                <div class="w-20 h-20 rounded-3xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-4xl mx-auto">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-black" id="quizResultTitle">أحسنت يا بطل!</h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-1" id="quizResultSubtitle"></p>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">
+                    <div class="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
+                        <div class="text-2xl font-black text-emerald-600 dark:text-emerald-400" id="resRight">0</div>
+                        <div class="text-xs font-bold text-slate-500">إجابة صحيحة</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/20">
+                        <div class="text-2xl font-black text-rose-600 dark:text-rose-400" id="resWrong">0</div>
+                        <div class="text-xs font-bold text-slate-500">إجابة خاطئة</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20">
+                        <div class="text-2xl font-black text-amber-600 dark:text-amber-400" id="resScore">0%</div>
+                        <div class="text-xs font-bold text-slate-500">الدرجة</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-3 pt-2">
+                    <button onclick="restartQuizSetup()" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition">
+                        <i class="fa-solid fa-rotate-right ml-1"></i> اختبار جديد
+                    </button>
+                    <button onclick="retryQuizMistakes()" id="retryMistakesBtn" class="hidden px-6 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm transition">
+                        <i class="fa-solid fa-bolt ml-1"></i> إعادة اختبار أخطائي الآن
+                    </button>
+                    <button onclick="switchMode('study')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 font-bold text-sm transition">
+                        العودة لوضع المذاكرة
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- MODE 3: 3D FLASHCARDS MODE                 -->
+        <!-- ========================================== -->
+        <section id="mode-flashcards" class="hidden space-y-6">
+            <div class="max-w-2xl mx-auto space-y-4">
+                <!-- Flashcard Filter & Controls -->
+                <div class="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex items-center gap-2">
+                        <select id="fcFilterSelect" onchange="initFlashcards()" class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold">
+                            <option value="all">جميع الأسئلة (٢١١)</option>
+                            <option value="tf-false">أسئلة الخطأ مع تعليلها (١-٦٦)</option>
+                            <option value="tf-true">أسئلة الصواب (٦٧-١٤٢)</option>
+                            <option value="mcq">الاختيار من متعدد (١٤٣-٢١١)</option>
+                            <option value="starred">المميزة بنجمة ⭐</option>
+                            <option value="mistakes">صندوق الأخطاء ⚠️</option>
+                        </select>
+                        <button onclick="shuffleFlashcards()" class="px-3 py-2 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 text-xs font-bold hover:bg-amber-500/20 transition">
+                            <i class="fa-solid fa-shuffle ml-1"></i> خلط البطاقات
+                        </button>
+                    </div>
+                    <div class="text-xs font-bold text-slate-500">
+                        البطاقة <span id="fcCurrentIndex" class="text-emerald-600 dark:text-emerald-400 font-black">1</span> من <span id="fcTotalCount">211</span>
+                    </div>
+                </div>
+
+                <!-- 3D Flip Card -->
+                <div onclick="flipFlashcard()" class="perspective-1000 cursor-pointer select-none h-80 sm:h-96 w-full">
+                    <div id="fcInner" class="transform-style-3d relative w-full h-full">
+                        <!-- Front of Card -->
+                        <div class="backface-hidden absolute inset-0 bg-white dark:bg-slate-900 rounded-3xl shadow-lg border-2 border-emerald-500/30 p-6 sm:p-8 flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span id="fcFrontBadge" class="px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 text-xs font-bold">سؤال #1</span>
+                                <span class="text-xs text-slate-400 font-bold"><i class="fa-solid fa-hand-pointer ml-1"></i> اضغط لقلب البطاقة أو مسافة Space</span>
+                            </div>
+                            <div class="my-auto text-center space-y-4">
+                                <h3 id="fcFrontQuestion" class="text-lg sm:text-2xl font-bold leading-relaxed"></h3>
+                                <div id="fcFrontChoices" class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 grid grid-cols-2 gap-2 max-w-lg mx-auto"></div>
+                            </div>
+                            <div class="text-center text-xs text-emerald-600 dark:text-emerald-400 font-bold">
+                                فكّر في الإجابة ثم اقلب البطاقة للتحقق 👇
+                            </div>
+                        </div>
+
+                        <!-- Back of Card -->
+                        <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-emerald-900 to-slate-900 text-white rounded-3xl shadow-xl border-2 border-amber-400 p-6 sm:p-8 flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-lg bg-amber-400/20 text-amber-300 text-xs font-bold">الإجابة النموذجية والشرح</span>
+                                <i class="fa-solid fa-circle-check text-2xl text-amber-400"></i>
+                            </div>
+                            <div class="my-auto text-center space-y-4">
+                                <div id="fcBackAnswer" class="text-2xl sm:text-3xl font-black text-amber-400"></div>
+                                <p id="fcBackExplanation" class="text-sm sm:text-base text-emerald-100 leading-relaxed max-w-lg mx-auto bg-white/10 p-4 rounded-2xl border border-white/10"></p>
+                            </div>
+                            <div class="text-center text-xs text-emerald-200/70">
+                                اضغط مرة أخرى للعودة للسؤال
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation & Mastery Buttons -->
+                <div class="grid grid-cols-3 gap-3">
+                    <button onclick="prevFlashcard()" class="py-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 font-bold text-sm flex items-center justify-center gap-2 transition">
+                        <i class="fa-solid fa-arrow-right"></i> السابق
+                    </button>
+                    <button onclick="markFcMasteredAndNext()" class="py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md transition">
+                        <i class="fa-solid fa-check"></i> متقن والتالي
+                    </button>
+                    <button onclick="nextFlashcard()" class="py-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 font-bold text-sm flex items-center justify-center gap-2 transition">
+                        التالي <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- MODE 4: 60-SECOND SPEED CHALLENGE          -->
+        <!-- ========================================== -->
+        <section id="mode-speed" class="hidden space-y-6">
+            <div class="max-w-2xl mx-auto">
+                <!-- Speed Start Screen -->
+                <div id="speedStartBox" class="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 text-center space-y-5">
+                    <div class="w-20 h-20 rounded-3xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-4xl mx-auto">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h2 class="text-2xl font-black">تحدي السرعة (FAST LANE ⚡)</h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm max-w-md mx-auto">
+                        أمامك <strong>٦٠ ثانية فقط</strong> للإجابة على أكبر عدد ممكن من الأسئلة العشوائية من الـ ٢١١ سؤالاً! كل إجابة صحيحة متتالية ترفع مضاعف النقاط!
+                    </p>
+                    <div class="text-sm font-bold text-amber-600 dark:text-amber-400">
+                        أعلى نتيجة مسجلة لك: <span id="highScoreDisplay" class="font-black text-lg">0</span> نقطة 🏆
+                    </div>
+                    <button onclick="startSpeedChallenge()" class="px-8 py-4 rounded-2xl bg-gradient-to-l from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-black text-lg shadow-lg transition">
+                        انطلق الآن! 🚀
+                    </button>
+                </div>
+
+                <!-- Speed Active Box -->
+                <div id="speedPlayBox" class="hidden space-y-4">
+                    <div class="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                        <div class="flex items-center gap-2 text-rose-600 dark:text-rose-400 font-black text-xl">
+                            <i class="fa-solid fa-stopwatch"></i>
+                            <span id="speedTimer">60</span> ث
+                        </div>
+                        <div class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-400 font-black text-sm">
+                            المضاعف: x<span id="speedMultiplier">1</span> 🔥
+                        </div>
+                        <div class="font-black text-lg text-emerald-600 dark:text-emerald-400">
+                            النقاط: <span id="speedScore">0</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl shadow-md border border-slate-200 dark:border-slate-800 space-y-5">
+                        <span id="speedQBadge" class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-xs font-bold">سؤال</span>
+                        <h3 id="speedQText" class="text-lg sm:text-xl font-bold leading-relaxed"></h3>
+                        <div id="speedOptions" class="space-y-2.5"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- MODE 5: SMART TRAPS & CHEAT SHEET          -->
+        <!-- ========================================== -->
+        <section id="mode-traps" class="hidden space-y-6">
+            <div class="bg-gradient-to-l from-emerald-900 to-emerald-800 text-white p-6 rounded-3xl shadow-lg border border-amber-400/30">
+                <h2 class="text-xl sm:text-2xl font-black flex items-center gap-2 text-amber-300">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    الخلاصة الذهبية والتركات المتكررة في الاختبار
+                </h2>
+                <p class="text-emerald-100 text-sm mt-1">
+                    هذه أهم الفروقات والمصائد التي تتكرر في أسئلة الصح والخطأ والاختياري — راجعها قبل دخول الاختبار بدقائق!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 space-y-3">
+                    <h3 class="font-black text-emerald-700 dark:text-emerald-400 flex items-center gap-2 text-base">
+                        <i class="fa-solid fa-scale-balanced text-amber-500"></i> ١. تعريف العبادة ومرتكزاتها وتقسيماتها
+                    </h3>
+                    <ul class="text-sm space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <li>• <strong>العبادة لغة:</strong> التذلل والخضوع.</li>
+                        <li>• <strong>العبادة اصطلاحاً:</strong> اسم جامع لكل ما يحبه الله ويرضاه من الأقوال والأفعال الظاهرة والباطنة.</li>
+                        <li>• <strong>مرتكزات العبادة (اثنان):</strong> الإخلاص لله + المتابعة للنبي ﷺ (انتبه: الرجاء عبادة قلبية وليس مرتكزاً!).</li>
+                        <li>• <strong>الحج:</strong> عبادة <span class="text-emerald-600 font-bold">بدنية ومالية معاً</span> (وليس مالية فقط).</li>
+                        <li>• <strong>صلاة الوتر:</strong> عبادة <span class="text-emerald-600 font-bold">ليلية</span> (وليست نهارية)، وصلاة الظهر نهارية.</li>
+                        <li>• <strong>العبادة اللحظية:</strong> تقسيم باعتبار <span class="text-emerald-600 font-bold">الوقت</span>. و<strong>فرض الكفاية (كصلاة الجنازة):</strong> باعتبار <span class="text-emerald-600 font-bold">الحكم الشرعي</span>.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 space-y-3">
+                    <h3 class="font-black text-emerald-700 dark:text-emerald-400 flex items-center gap-2 text-base">
+                        <i class="fa-solid fa-book-quran text-amber-500"></i> ٢. فرق مهم جداً: معاني التلاوة vs مراتب التلاوة
+                    </h3>
+                    <ul class="text-sm space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <li>• <strong>معاني التلاوة الخمسة في القرآن:</strong> القراءة، الاتباع، العمل، الرواية، الإنزال. <span class="text-rose-500 font-bold">(فخ: الرواية من المعاني وليست من المراتب!)</span>.</li>
+                        <li>• <strong>مراتب التلاوة (سرعة القراءة):</strong>
+                            <br>١. <strong>التحقيق:</strong> المبالغة بالإتيان بالشيء على حقه بلا زيادة ولا نقصان.
+                            <br>٢. <strong>الترتيل:</strong> قراءته بتؤدة وطمأنينة بتبيين الحروف وإشباع الحركات.
+                            <br>٣. <strong>التدوير (التوسط):</strong> مرتبة وسط بين الترتيل والحدر.
+                            <br>٤. <strong>الحدر:</strong> إدراج القراءة وسرعتها مع مراعاة التجويد.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 space-y-3">
+                    <h3 class="font-black text-emerald-700 dark:text-emerald-400 flex items-center gap-2 text-base">
+                        <i class="fa-solid fa-heart-pulse text-amber-500"></i> ٣. العبادات القلبية (الإخلاص، التوكل، الخوف، الرجاء، التوبة)
+                    </h3>
+                    <ul class="text-sm space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <li>• <strong>القلب:</strong> مبدأ التكاليف ومصدرها، وعبادات القلب هي <span class="text-emerald-600 font-bold">المحرك والدافع</span> لعبادات الجوارح (وليس العكس!).</li>
+                        <li>• <strong>الإخلاص:</strong> إفراد الله بالنية في الطاعة. ودليله: ﴿ولا يشرك بعبادة ربه أحداً﴾، و«رب عمل صغير تعظمه النية».</li>
+                        <li>• <strong>ترك العمل لأجل الناس:</strong> <span class="text-rose-500 font-bold">رياء</span> (قول الفضيل بن عياض)، ولا يجوز ترك العمل خشية الرياء! أما ترك الطاعة خوفاً من أذى الناس وغيبتهم فليس برياء.</li>
+                        <li>• <strong>عبادة الله بالرجاء وحده:</strong> مرجئ. <strong>وبالخوف وحده:</strong> حروري (خارجي). <strong>وبالحب والخوف والرجاء معاً:</strong> مؤمن موحد.</li>
+                        <li>• <strong>في حال الصحة:</strong> استحب السلف تغليب جانب <span class="text-emerald-600 font-bold">الخوف</span>، وعند الموت تغليب <span class="text-emerald-600 font-bold">الرجاء</span>.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 space-y-3">
+                    <h3 class="font-black text-emerald-700 dark:text-emerald-400 flex items-center gap-2 text-base">
+                        <i class="fa-solid fa-users text-amber-500"></i> ٤. الصحابة رضي الله عنهم وألقابهم في المقرر
+                    </h3>
+                    <ul class="text-sm space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <li>• <strong>عبد الله بن عباس:</strong> نبغ في <span class="text-emerald-600 font-bold">الفقه والفهم</span>، وقال عنه عمر: «ذاكم فتى الكهول، له لسان سؤول، وقلب عقول»، وتوفي في <strong>الطائف</strong> (ولم يشهد بدراً لصغر سنه!).</li>
+                        <li>• <strong>عبد الله بن مسعود:</strong> شهد بدراً وأجهز على أبي جهل، وقال له النبي ﷺ: «إنك لغلام معلم»، وأثنى على قراءته للقرآن (ابن أم عبد).</li>
+                        <li>• <strong>أبو هريرة:</strong> نبغ في <span class="text-emerald-600 font-bold">الحفظ</span>.</li>
+                        <li>• <strong>أنس بن مالك:</strong> من <span class="text-emerald-600 font-bold">الأنصار</span> (وليس المهاجرين)، وهو آخر من مات من الصحابة في <strong>البصرة</strong>.</li>
+                        <li>• <strong>عبد الله بن عمرو:</strong> اشتهر بالإكثار من العبادة.</li>
+                        <li>• <strong>السيدة عائشة:</strong> أكثر زوجات النبي ﷺ علماً، وتوفي النبي ﷺ وعمرها <strong>١٨ سنة</strong> (وليس ١٥!).</li>
+                    </ul>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 space-y-3">
+                    <h3 class="font-black text-emerald-700 dark:text-emerald-400 flex items-center gap-2 text-base">
+                        <i class="fa-solid fa-comments text-amber-500"></i> ٥. عبادات اللسان والنظر وأحكام السفر والحج
+                    </h3>
+                    <ul class="text-sm space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <li>• <strong>عبادات اللسان الفعلية:</strong> فيها نطق (الشهادتين، تلاوة القرآن، الذكر). <strong>التركية:</strong> كف اللسان (ترك السب والشتم والقذف = ترك محرم، بينما <strong>ترك فضول الكلام</strong> = ترك مكروه).</li>
+                        <li>• <strong>النظر في المصحف:</strong> عبادة للعين (الجوارح) وليس اللسان! و<strong>فضول النظر:</strong> مكروه، بينما النظر للنساء بشهوة: محرم.</li>
+                        <li>• <strong>الجمع والقصر:</strong> الفجر لا تُجمع أبداً، والمغرب لا تُقصر أبداً. والجمع لغير عذر <span class="text-rose-500 font-bold">من كبائر الذنوب</span>.</li>
+                        <li>• <strong>ترتيب أعمال يوم العيد (النحر):</strong> ١. الرمي ⬅️ ٢. النحر ⬅️ ٣. الحلق ⬅️ ٤. طواف الإفاضة (رمي - نحر - حلق - طواف). وحجة الوداع كانت سنة <strong>١٠ هـ</strong>.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 space-y-3">
+                    <h3 class="font-black text-emerald-700 dark:text-emerald-400 flex items-center gap-2 text-base">
+                        <i class="fa-solid fa-ban text-amber-500"></i> ٦. البدع وأقسامها ومصطلحات الأحاديث
+                    </h3>
+                    <ul class="text-sm space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <li>• <strong>البدعة أحب إلى إبليس من المعصية</strong>؛ لأن العاصي يتوب والمبتدع يظن أنه على حق. وكل بدعة ضلالة (لا تقسم إلى حسنة وسيئة).</li>
+                        <li>• <strong>تخصيص ليلة النصف من شعبان:</strong> بدعة في العبادة (تخصيص وقت) وليست اعتقادية. و<strong>مقالات الفرق الضالة:</strong> بدعة قولية اعتقادية. و<strong>الذكر الجماعي بالتلحين والتشديد على النفس:</strong> بدعة في <span class="text-emerald-600 font-bold">صفة أداء العبادة</span>.</li>
+                        <li>• <strong>«نعمت البدعة» في التراويح:</strong> بدعة <span class="text-emerald-600 font-bold">لغوية</span>.</li>
+                        <li>• <strong>الاستحداد:</strong> حلق شعر العانة. <strong>الكساء:</strong> ثوب يُلبس (وليس بناءً!). <strong>الرهط:</strong> من ٣ إلى ١٠. <strong>لا يستتر:</strong> لا يتنزه من البول. <strong>اتقوا اللعانين:</strong> قضاء الحاجة في طريق الناس وظلهم.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Custom Reset Modal (No alert/confirm!) -->
+    <div id="resetModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-md w-full p-6 border border-slate-200 dark:border-slate-800 shadow-2xl space-y-4 text-center animate-pop">
+            <div class="w-14 h-14 rounded-2xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-2xl mx-auto">
+                <i class="fa-solid fa-trash-can"></i>
+            </div>
+            <h3 class="text-xl font-black">تصفير سجل المذاكرة؟</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400">
+                سيتم مسح علامات الإتقان والنجوم وصندوق الأخطاء لتبدأ التختيم من جديد. هل أنت متأكد؟
+            </p>
+            <div class="flex gap-3 justify-center pt-2">
+                <button onclick="confirmResetProgress()" class="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm transition">
+                    نعم، صفّر التقدم
+                </button>
+                <button onclick="closeResetModal()" class="px-5 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 font-bold text-sm transition">
+                    إلغاء
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toastBox" class="fixed bottom-5 left-5 z-50 hidden px-4 py-3 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-sm shadow-xl flex items-center gap-2 animate-pop">
+        <i class="fa-solid fa-circle-check text-emerald-400 dark:text-emerald-600"></i>
+        <span id="toastText"></span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 border-t border-slate-200 dark:border-slate-800 py-6 text-center text-xs text-slate-500 dark:text-slate-400">
+        <p class="font-bold">منصة التختيم السريع - الثقافة الإسلامية ٢ • جميع الـ ٢١١ سؤالاً كاملة ومحلولة</p>
+    </footer>
+
+    <!-- ===================================================== -->
+    <!-- COMPLETE 211 QUESTIONS DATA & APPLICATION LOGIC       -->
+    <!-- ===================================================== -->
+    <script>
+        // 1. ALL 211 QUESTIONS DATABASE (Complete without a single exception)
+        const questionsData = [
+            // ================= SECTION 1A: TRUE/FALSE - ANSWER IS FALSE (1 to 66) =================
+            { id: 1, type: 'tf', q: 'العبادة في اللغة هي اسم جامع لكل ما يحبه الله ويرضاه من الأقوال والأفعال الظاهرة والباطنة :', ans: 'خطأ', exp: '«اسم جامع لكل ما يحبه الله ويرضاه من الأقوال والأفعال الظاهرة والباطنة» هذا تعريف العبادة «اصطلاحًا». أما لغة فمعناها التذلل والخضوع.' },
+            { id: 2, type: 'tf', q: 'صلاة الوتر من العبادات النهارية :', ans: 'خطأ', exp: 'صلاة الوتر من العبادات «الليلية»، لأن وقتها بعد العشاء إلى طلوع الفجر.' },
+            { id: 3, type: 'tf', q: 'من الأمثلة على العبادات القلبية عفة اللسان :', ans: 'خطأ', exp: 'عفة اللسان عبادة «قولية» يقوم بها اللسان مو قلبية. العبادات القلبية مثل الإخلاص والمحبة والخوف.' },
+            { id: 4, type: 'tf', q: 'الحج عبادة مالية فقط :', ans: 'خطأ', exp: 'الحج عبادة بدنية ومالية مع بعض؛ فيه سفر وطواف وسعي، وفيه نفقة. فقول مالية فقط غلط.' },
+            { id: 5, type: 'tf', q: 'من عبادات الأفعال الظاهرة (محبة الله) :', ans: 'خطأ', exp: 'محبة الله عمل في القلب، فهي من العبادات «الباطنة»، مو من الأفعال الظاهرة.' },
+            { id: 6, type: 'tf', q: 'من العبادات الظاهرة خشية الله :', ans: 'خطأ', exp: 'خشية الله عمل في القلب، فهي من العبادات «الباطنة» مو الظاهرة.' },
+            { id: 7, type: 'tf', q: 'من خصائص العبادة في الإسلام أنها مفصولة تماما عن أمور الحياة :', ans: 'خطأ', exp: 'من خصائص العبادة في الإسلام «الشمول»: تشمل كل مناحي الحياة، فالعمل والدراسة والتعامل كلها عبادة إذا صلحت النية. فالعبادة مو مفصولة عن الحياة.' },
+            { id: 8, type: 'tf', q: 'ليس هناك علاقة بين التزام الموظف بوظيفته وبين مفهوم شمول العبادة :', ans: 'خطأ', exp: 'التزام الموظف بوظيفته من صور شمول العبادة، لأن إتقان العمل بنية صالحة عبادة يؤجر عليها. فالعلاقة موجودة.' },
+            { id: 9, type: 'tf', q: 'الزراعة والغراسة لها فضل عظيم دنيوي فقط :', ans: 'خطأ', exp: 'الزراعة والغراسة لها فضل دنيوي وأخروي مع بعض: «ما من مسلم يغرس غرسًا ... إلا كان له به صدقة». فقول «دنيوي فقط» غلط.' },
+            { id: 10, type: 'tf', q: 'توفير الظل للكائنات الحية من مزايا الزراعة والغراسة الأخروية :', ans: 'خطأ', exp: 'توفير الظل للكائنات من مزايا الزراعة «الدنيوية». أما الأخروية فهي الأجر والصدقة الجارية.' },
+            { id: 11, type: 'tf', q: 'رمي المخلفات في الطرقات من المناظر التي حث عليها الشرع الكريم :', ans: 'خطأ', exp: 'الشرع نهى عن أذى الطريق، و«إماطة الأذى عن الطريق صدقة». فرمي المخلفات في الطرقات منهي عنه، مو محثوث عليه.' },
+            { id: 12, type: 'tf', q: 'النهي عن التخلي في الطريق أو الظل من التعامل الذي أرشدنا إليه الشرع مع الحيوان :', ans: 'خطأ', exp: 'النهي عن التخلي في الطريق أو الظل من إرشادات التعامل مع البيئة والناس مو مع الحيوان.' },
+            { id: 13, type: 'tf', q: 'من مميزات عبادات القلب أنها مثبطة لعبادات الجوارح :', ans: 'خطأ', exp: 'عبادات القلب محركة ودافعة لعبادات الجوارح، مو مثبطة لها.' },
+            { id: 14, type: 'tf', q: 'عبادات الجوارح هي المحرك والدافع الأساسي للعبادات القلبية :', ans: 'خطأ', exp: 'العكس هو الصحيح: «عبادات القلب» هي المحرك والدافع الأساسي لعبادات الجوارح.' },
+            { id: 15, type: 'tf', q: '"رب عمل صغير عظمته النية" هذا دليل على فضل التوكل على الله :', ans: 'خطأ', exp: '«رب عمل صغير تعظمه النية» دليل على فضل «الإخلاص والنية الصالحة» مو التوكل.' },
+            { id: 16, type: 'tf', q: 'من وسائل حياة القلب ممارسة الرياضات البدنية :', ans: 'خطأ', exp: 'وسائل حياة القلب وسائل إيمانية، مثل الذكر وقراءة القرآن وتذكر الموت وطلب العلم ومجالسة الصالحين. والرياضة البدنية تفيد الجسد مو القلب.' },
+            { id: 17, type: 'tf', q: 'ذكر الموت يورث قسوة القلب حتى أنه قيل: "إن ذكرت الموت فسد علي قلبي" :', ans: 'خطأ', exp: 'ذكر الموت يرقق القلب ويحييه، وما يقسيه. والقول المذكور يثبت هالشي: إذا غاب عنه ذكر الموت فسد قلبه.' },
+            { id: 18, type: 'tf', q: 'في قوله تعالى (فمن كان يرجو لقاء ربه فليعمل عملًا صالحًا ولا يشرك بعبادة ربه أحدًا) دلالة على عبادة قلبية ألا وهي التوكل :', ans: 'خطأ', exp: 'الآية: (ولا يشرك بعبادة ربه أحدًا) دليل على «الإخلاص»، مو التوكل.' },
+            { id: 19, type: 'tf', q: 'تتحقق التوبة الصادقة بشرط واحد فقط وهو : الندم على ما فات من ذنوب :', ans: 'خطأ', exp: 'التوبة الصادقة لها ثلاث شروط: الإقلاع عن الذنب والعزم على عدم العودة، والندم على ما فات، والتحلل من حقوق الناس. فالندم وحده ما يكفي.' },
+            { id: 20, type: 'tf', q: 'من معاني التوكل الرجوع عن معصية الله إلى طاعته :', ans: 'خطأ', exp: 'الرجوع عن معصية الله إلى طاعته هذا معنى «التوبة»، مو التوكل.' },
+            { id: 21, type: 'tf', q: 'العبادات القلبية لا علاقة لها بعبادات الجوارح :', ans: 'خطأ', exp: 'العبادات القلبية أصل عبادات الجوارح ومحركها، فالعلاقة بينهم قوية جدًا.' },
+            { id: 22, type: 'tf', q: 'اللسان له شأن خطير والجوارح غير مرهونة به :', ans: 'خطأ', exp: 'الصحيح عكس العبارة: اللسان شأنه عظيم وكل الجوارح مرهونة به، ولهذا تقول الأعضاء للسان كل صباح: اتق الله فينا فإنما نحن بك. فقول إن الجوارح غير مرهونة به خطأ.' },
+            { id: 23, type: 'tf', q: 'ترك السب والشتم واللعن من عبادات اللسان الفعلية :', ans: 'خطأ', exp: 'ترك السب والشتم واللعن امتناع عن الكلام، فهو من عبادات اللسان «التركية» (ترك المحرم)، مو الفعلية. الفعلية فيها نطق، والتركية فيها كف وامتناع.' },
+            { id: 24, type: 'tf', q: 'من مراتب تلاوة القرآن الكريم: الرواية :', ans: 'خطأ', exp: 'لا تخلط بين «معاني» التلاوة و«مراتبها». الرواية من المعاني الخمسة، أما المراتب فهي سرعة القراءة: التحقيق والترتيل والتدوير والحدر. فالرواية مو مرتبة.' },
+            { id: 25, type: 'tf', q: 'ترك السب والشتم من عبادة اللسان التركية المكروهة :', ans: 'خطأ', exp: 'السب والشتم محرّمان، فتركهما من التركية «المحرمة» مو المكروهة. المكروه مثاله فضول الكلام.' },
+            { id: 26, type: 'tf', q: 'عقوق الوالدين يكون بالفعل فقط :', ans: 'خطأ', exp: 'العقوق ما يقتصر على الفعل، بل يكون بالقول واللسان أيضًا، مثل رفع الصوت على الوالدين والتأفف منهما، والدليل (فلا تقل لهما أف).' },
+            { id: 27, type: 'tf', q: 'الخلل الموجود في عبادات القلب لا يؤثر على عبادات الجوارح :', ans: 'خطأ', exp: 'العلاقة بين القلب والجوارح علاقة تلازم: إذا صلح القلب صلح الجسد كله، وإذا فسد فسد الجسد كله. فأي خلل في عبادة القلب يظهر أثره على الجوارح.' },
+            { id: 28, type: 'tf', q: 'معنى قوله صلى الله عليه وسلم : "لا يستتر" أي : لا يستعفف عن النظر الحرام :', ans: 'خطأ', exp: '«لا يستتر» في حديث القبرين معناها: لا يستتر من بوله ولا يتنزه منه، مو غض البصر عن النظر الحرام.' },
+            { id: 29, type: 'tf', q: 'مثال النظر المكروه النظر إلى النساء بشهوة :', ans: 'خطأ', exp: 'النظر إلى النساء بشهوة نظر محرم مو مكروه. المكروه مثاله فضول النظر اللي ما فيه مصلحة.' },
+            { id: 30, type: 'tf', q: 'من أعظم عبادات اللسان الفعلية عبادة النظر في المصحف :', ans: 'خطأ', exp: 'النظر في المصحف عبادة للعين والعين من الجوارح، فهو مو من عبادات اللسان. عبادات اللسان هي ما ينطق به اللسان.' },
+            { id: 31, type: 'tf', q: 'عن ابن عباس رضي الله عنهما قال: مر النبي ﷺ بقبرين فقال: "إنهما ليعذبان، وما يعذبان في كبير، أما أحدهما..." الخ الحديث. مما يستفاد من الحديث : عدم ثبوت عذاب القبر على العاصي :', ans: 'خطأ', exp: 'الحديث نفسه دليل على ثبوت عذاب القبر، لأن النبي ﷺ قال عن صاحبي القبرين «إنهما ليعذبان» بسبب النميمة وترك التنزه من البول، فقول «عدم ثبوت» عكس الفائدة.' },
+            { id: 32, type: 'tf', q: 'النميمة وترك التنزه من البول من صغائر الذنوب :', ans: 'خطأ', exp: 'الحديث قال «وما يعذبان في كبير» يعني في أمر يشق عليهما تركه، لكنهما من الكبائر، لأن عليهما عذابًا في القبر. فالنميمة وترك التنزه من البول من كبائر الذنوب مو صغائرها.' },
+            { id: 33, type: 'tf', q: 'من كبار الصحابة الذين كان لهم السبق في الإسلام وشهد بدرًا وما بعدها وأجهز في غزوة بدر عبد الله بن عباس ابن عم رسول الله ﷺ :', ans: 'خطأ', exp: 'ابن عباس ولد قبل الهجرة بثلاث سنين، فكان صغيرًا وقت بدر وما شهدها. اللي أجهز في بدر على أبي جهل هو عبد الله بن مسعود.' },
+            { id: 34, type: 'tf', q: 'توفي النبي ﷺ وعمر السيدة عائشة رضي الله عنها خمسة عشر سنة :', ans: 'خطأ', exp: 'تزوجها النبي ﷺ وعمرها ست سنين ودخل بها وعمرها تسع، وتوفي وعمرها ثمانية عشر سنة، مو خمسة عشر.' },
+            { id: 35, type: 'tf', q: 'ليس هناك علاقة بين صلاة الجماعة وبين وحدة الصف واجتماع كلمة المسلمين :', ans: 'خطأ', exp: 'من حكم صلاة الجماعة توحيد الصف واجتماع كلمة المسلمين وتألف قلوبهم، فالعلاقة موجودة والعبارة خطأ.' },
+            { id: 36, type: 'tf', q: 'يجوز للمسلم الجمع بين صلاتي الفجر والظهر :', ans: 'خطأ', exp: 'الجمع يكون بين الظهر والعصر، وبين المغرب والعشاء فقط، والفجر ما تجمع مع اللي قبلها ولا اللي بعدها.' },
+            { id: 37, type: 'tf', q: 'يجوز للمسافر الجمع بين صلاتي العشاء والفجر للضرورة :', ans: 'خطأ', exp: 'العشاء والفجر ما يُجمعان، لأن الفجر ما تجمع مع غيرها أبدًا، حتى للمسافر.' },
+            { id: 38, type: 'tf', q: 'لا يجوز الجمع في السفر إلا لمن كان سائرًا فقط :', ans: 'خطأ', exp: 'الحديث ذكر الجمع لمن كان «على ظهر سير» يعني يمشي، لكن الجمع جائز أيضًا للمسافر النازل، وفي المطر والمرض. فكلمة «فقط» تخلي العبارة خطأ.' },
+            { id: 39, type: 'tf', q: 'عند جمع صلاة المغرب مع العشاء نقصر صلاة المغرب أيضًا إلى ركعتين :', ans: 'خطأ', exp: 'المغرب ثلاث ركعات وما تقصر أبدًا، حتى لو جمعت مع العشاء. القصر للرباعية فقط (الظهر والعصر والعشاء).' },
+            { id: 40, type: 'tf', q: 'يجوز للمسلم الجمع في الوحل والمطر والثلج والريح الشديدة، وإن لم يكن هناك مشقة لحضور صلاة الجماعة :', ans: 'خطأ', exp: 'الجمع في الوحل والمطر والثلج والريح مشروط بأن تلحق مشقة تبيح التخلف عن الجماعة، فإذا ما فيه مشقة ما يجوز الجمع.' },
+            { id: 41, type: 'tf', q: 'تختلف رخص السفر في البحر والجو عن رخص السفر في البر حسب المشقة :', ans: 'خطأ', exp: 'الكتاب قال إن رخص السفر في البحر والجو مثل رخص البر، ما تختلف، لأن العبرة بالسفر نفسه.' },
+            { id: 42, type: 'tf', q: 'الشريعة الإسلامية شريعة يسر وسهولة ويتمثل ذلك في عدم إباحة الجمع بين الصلاتين للمسافرين :', ans: 'خطأ', exp: 'اليسر يتمثل في «إباحة» الجمع للمسافر، مو في منعه. العبارة عكست المعنى.' },
+            { id: 43, type: 'tf', q: 'أنس بن مالك رضي الله عنه هو من المهاجرين :', ans: 'خطأ', exp: 'أنس بن مالك من الأنصار من أهل المدينة، وخدم النبي ﷺ عشر سنين، فهو مو من المهاجرين.' },
+            { id: 44, type: 'tf', q: 'آخر من مات من الصحابة في البصرة هو عبد الله بن عباس رضي الله عنهما :', ans: 'خطأ', exp: 'آخر من مات من الصحابة في البصرة هو أنس بن مالك رضي الله عنه. أما ابن عباس فتوفي في الطائف.' },
+            { id: 45, type: 'tf', q: 'لا يحق للمسافر أن يتم صومه ويجب عليه أن يفطر :', ans: 'خطأ', exp: 'حديث أنس «فمنا الصائم ومنا المفطر» يدل على جواز الأمرين للمسافر: يصوم أو يفطر. فقول «يجب عليه أن يفطر» خطأ.' },
+            { id: 46, type: 'tf', q: 'الكساء هو نوع من الأبنية التي يتقى بها من حر الشمس :', ans: 'خطأ', exp: 'الكساء نوع من الثياب يُلبس ويتغطى به مو بناء. البناء اللي يتقى به حر الشمس اسمه الخباء أو الخيمة.' },
+            { id: 47, type: 'tf', q: 'قول النبي ﷺ: "ارم ولا حرج"، "افعل ولا حرج" دليل على أن الشريعة فيها حرج وتشديد :', ans: 'خطأ', exp: '«افعل ولا حرج» دليل على يسر الشريعة ورفع الحرج، لأن النبي ﷺ ما شدد على من قدم أو أخر في أعمال يوم النحر.' },
+            { id: 48, type: 'tf', q: 'حجة الوداع هي الحجة التي حجها النبي ﷺ سنة ١١ هـ ومات بعدها :', ans: 'خطأ', exp: 'حجة الوداع كانت في السنة العاشرة للهجرة، وتوفي النبي ﷺ بعدها في السنة الحادية عشرة.' },
+            { id: 49, type: 'tf', q: 'إذا كان في البلد مسلمون، فلا يجوز التعامل مع غيرهم ببيع أو شراء :', ans: 'خطأ', exp: 'النبي ﷺ تعامل مع يهودي بالبيع والشراء والمدينة فيها مسلمون كثير، فالتعامل المباح مع غير المسلمين جائز حتى مع وجود المسلمين.' },
+            { id: 50, type: 'tf', q: 'التعامل المباح بالبيع والشراء مع غير المسلمين يعتبر من صور الركون للكافرين :', ans: 'خطأ', exp: 'الكتاب نبه أن البيع والشراء المباح مع غير المسلم ما يُعد ركونًا للكافرين ولا موالاة لهم، لأن النبي ﷺ فعله.' },
+            { id: 51, type: 'tf', q: 'في حديث : "فمن رغب عن سنتي فليس مني"، معنى "فليس مني": أنه كافر خارج عن الدين :', ans: 'خطأ', exp: '«فليس مني» معناها: ليس على طريقتي ومنهجي، ما تعني أنه كافر خارج عن الدين.' },
+            { id: 52, type: 'tf', q: 'يجوز ترك الزواج تبتلًا وتعبدًا :', ans: 'خطأ', exp: 'ترك الزواج تبتلًا وتعبدًا مخالف للسنة، والنبي ﷺ رد على الرهط اللي قال أحدهم «لا أتزوج النساء» وقال: «وأتزوج النساء فمن رغب عن سنتي فليس مني».' },
+            { id: 53, type: 'tf', q: 'التوقي من أسباب الضرر ينافي التوكل الكامل لله تعالى :', ans: 'خطأ', exp: 'التوقي من أسباب الضرر من الأخذ بالأسباب، وهذا جزء من التوكل الصحيح وما ينافيه، مثل لبس النبي ﷺ درعين يوم أحد.' },
+            { id: 54, type: 'tf', q: 'المعصية أحب إلى إبليس من البدعة :', ans: 'خطأ', exp: 'الصحيح العكس: «البدعة أحب إلى إبليس من المعصية»، لأن العاصي يعرف أنه عاص فيتوب، والمبتدع يظن نفسه محسنًا فما يتوب.' },
+            { id: 55, type: 'tf', q: 'تخصيص يوم النصف من شعبان أو ليلته بصيام أو قيام هو من البدع الاعتقادية :', ans: 'خطأ', exp: 'تخصيص ليلة النصف من شعبان بصيام أو قيام بدعة في العبادة من نوع تخصيص وقت لم يخصصه الشرع، مو بدعة اعتقادية.' },
+            { id: 56, type: 'tf', q: 'أعياد الميلاد من البدع التي لها أصل في الشرع :', ans: 'خطأ', exp: 'الكتاب نص على أن الأعياد المحدثة مثل أعياد الميلاد والموالد لا أصل لها في الشرع، فهي بدعة في أصل العبادة.' },
+            { id: 57, type: 'tf', q: 'يصح تقسيم البدعة إلى بدعة حسنة وبدعة سيئة :', ans: 'خطأ', exp: 'تقسيم البدعة إلى حسنة وسيئة خطأ ومخالف، لأن النبي ﷺ حكم على البدع كلها بأنها ضلالة.' },
+            { id: 58, type: 'tf', q: 'من الرياء ترك الطاعة إذا علم الشخص أنه متى ما فعلها بحضرة الناس آذوه واغتابوه :', ans: 'خطأ', exp: 'ترك الطاعة خوفًا من أذى الناس وغيبتهم ما سببه طلب مدحهم، فهو مو من الرياء. الرياء الحقيقي ترك العمل لأجل الناس ونظرتهم.' },
+            { id: 59, type: 'tf', q: 'ترك العمل خشية عدم الإخلاص من المفاهيم الصائبة :', ans: 'خطأ', exp: 'ترك العمل خشية عدم الإخلاص من «المفاهيم الخاطئة»، لأنه تلبيس من الشيطان، والواجب إنك تعمل وتجاهد نفسك.' },
+            { id: 60, type: 'tf', q: 'يجوز للإنسان ترك العمل الصالح المفروض خشية الوقوع في الرياء :', ans: 'خطأ', exp: 'ما يجوز ترك العمل الصالح المفروض خوفًا من الرياء، الواجب إنه يسوي العمل ويجاهد نفسه على الإخلاص، لأن ترك الفرض لأجل الناس نفسه مدخل من مداخل الشيطان.' },
+            { id: 61, type: 'tf', q: 'التوبة المؤقتة لأجل مرض أو خوف أو امتحان توبة صادقة :', ans: 'خطأ', exp: 'التوبة الصادقة تكون لله، مع إقلاع وندم وعزم على عدم العودة. أما التوبة المؤقتة لأجل مرض أو خوف أو امتحان فما يتحقق فيها العزم، فهي مو توبة صادقة.' },
+            { id: 62, type: 'tf', q: 'فعل السبب والأخذ به ينافي التوكل على الله :', ans: 'خطأ', exp: 'الأخذ بالأسباب ما ينافي التوكل، بل هو من التوكل نفسه، والمتوكلون حقًا هم العاملون.' },
+            { id: 63, type: 'tf', q: 'من عبد الله بالرجاء وحده فهو مؤمن موحد :', ans: 'خطأ', exp: 'من عبده بالرجاء وحده فهو مرجئ. المؤمن الموحد هو اللي يعبده بالخوف والحب والرجاء معًا.' },
+            { id: 64, type: 'tf', q: 'من الرجاء المحمود أن يصر المرء على العصيان بلا توبة، ثم هو يرجو رحمة الله :', ans: 'خطأ', exp: 'الإصرار على المعصية بدون توبة مع رجاء الرحمة غرور وأماني، مو رجاء محمود. الرجاء المحمود يكون مع العمل والتوبة.' },
+            { id: 65, type: 'tf', q: 'عبادة الله بالخوف وحده دون الرجاء أمر مشروع :', ans: 'خطأ', exp: 'عبادة الله بالخوف وحده دون الرجاء غير مشروعة، ومن عبده بالخوف وحده فهو حروري (خارجي).' },
+            { id: 66, type: 'tf', q: 'أكد رسول الله ﷺ اقتران الخوف بالرجاء في عدة أحاديث، كان منها قوله : (إنما الأعمال بالنيات) :', ans: 'خطأ', exp: 'حديث «إنما الأعمال بالنيات» في الإخلاص والنية، مو من أحاديث اقتران الخوف بالرجاء.' },
+
+            // ================= SECTION 1B: TRUE/FALSE - ANSWER IS TRUE (67 to 142) =================
+            { id: 67, type: 'tf', q: 'العبادة في الاصطلاح اسم جامع لكل ما يحبه الله ويرضاه من الأقوال والأفعال الظاهرة والباطنة :', ans: 'صواب', exp: 'عبارة صحيحة؛ هذا هو التعريف الاصطلاحي الشامل للعبادة (شيخ الإسلام ابن تيمية).' },
+            { id: 68, type: 'tf', q: 'صلاة الظهر من العبادات النهارية :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأن وقتها يبدأ من زوال الشمس في وسط النهار.' },
+            { id: 69, type: 'tf', q: 'من الأمثلة على العبادات القلبية : الإخلاص :', ans: 'صواب', exp: 'عبارة صحيحة؛ الإخلاص محله القلب وهو أساس قبول العبادات.' },
+            { id: 70, type: 'tf', q: 'عبادات فرض الكفاية هي من تنوع العبادة باعتبار الحكم الشرعي :', ans: 'صواب', exp: 'عبارة صحيحة؛ تتنوع العبادة باعتبار الحكم الشرعي إلى فرض عين، وفرض كفاية، وسنة مستحبة.' },
+            { id: 71, type: 'tf', q: 'صلاة الجنائز من عبادات فروض الكفاية :', ans: 'صواب', exp: 'عبارة صحيحة؛ إذا قام بها البعض سقط الإثم عن الباقين.' },
+            { id: 72, type: 'tf', q: 'من شمولية العبادة في الإسلام؛ اهتمامها بكل ما يدب على هذه البسيطة، وكل ما له صلة بالحياة :', ans: 'صواب', exp: 'عبارة صحيحة؛ العبادة في الإسلام تشمل الإنسان والحيوان والبيئة وكل شؤون الحياة.' },
+            { id: 73, type: 'tf', q: 'من صور شمولية العبادة لمناحي الحياة؛ تحصيل الطالب للعلم بنية صالحة :', ans: 'صواب', exp: 'عبارة صحيحة؛ طلب العلم بنية صالحة من أعظم القربات والعبادات.' },
+            { id: 74, type: 'tf', q: 'شمولية العبادة لمناحي الحياة، ومن ذلك الطالب في تحصيله للعلم :', ans: 'صواب', exp: 'عبارة صحيحة؛ كما في حديث «من سلك طريقاً يلتمس فيه علماً سهل الله له به طريقاً إلى الجنة».' },
+            { id: 75, type: 'tf', q: 'من شمولية العبادة لمناحي الحياة الموظف في وظيفته :', ans: 'صواب', exp: 'عبارة صحيحة؛ إتقان الموظف لعمله واحتساب الأجر في نفع الناس وإعفاف نفسه عبادة.' },
+            { id: 76, type: 'tf', q: 'قوله تعالى (فاتقوا الله ما استطعتم) دليل على سهولة ويسر الأحكام في الشريعة الإسلامية :', ans: 'صواب', exp: 'عبارة صحيحة؛ التكليف في الشريعة منوط بالاستطاعة والقدرة.' },
+            { id: 77, type: 'tf', q: 'المباحات تصير طاعات بالنيات الصادقة :', ans: 'صواب', exp: 'عبارة صحيحة؛ العادات والمباحات كالأكل والنوم والعمل تنقلب إلى طاعات وعبادات بالنية الصالحة.' },
+            { id: 78, type: 'tf', q: 'العبادات القلبية أساس النجاة من النار والفوز بالجنة :', ans: 'صواب', exp: 'عبارة صحيحة؛ يوم لا ينفع مال ولا بنون إلا من أتى الله بقلب سليم.' },
+            { id: 79, type: 'tf', q: 'العبادات القلبية إذا اختلت هدمت عبادات الجوارح أو نقص أجرها :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأن أعمال الجوارح لا تُقبل ولا تكمل إلا بصلاح أعمال القلوب كالإخلاص.' },
+            { id: 80, type: 'tf', q: 'من خصائص العبادات القلبية أنها أساس النجاة من النار والفوز بالجنة :', ans: 'صواب', exp: 'عبارة صحيحة؛ سلامة القلب وصلاحه أساس الفوز في الآخرة.' },
+            { id: 81, type: 'tf', q: 'إن القلوب يعتريها الصدأ كما يعتري النحاس والفضة وجلاؤها يكون بذكر الله تعالى :', ans: 'صواب', exp: 'عبارة صحيحة؛ ذكر الله وتلاوة القرآن يجليان صدأ القلوب.' },
+            { id: 82, type: 'tf', q: 'لا شيء أنفع للقلب من ذكر الله فهو جلاء لصدأ القلوب :', ans: 'صواب', exp: 'عبارة صحيحة؛ الذكر حياة للقلوب وجلاء لصدئها.' },
+            { id: 83, type: 'tf', q: 'من أعظم الأدوية للقلب القاسي: زيارة القبور :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأنها تذكر بالموت والآخرة فترقق القلب.' },
+            { id: 84, type: 'tf', q: 'هناك علاقة وثيقة بين صحبة الأخيار وفعل الخير :', ans: 'صواب', exp: 'عبارة صحيحة؛ مجالسة الصالحين تعين على الطاعة وتحيي القلب.' },
+            { id: 85, type: 'tf', q: 'تعريف الإخلاص : هو إفراد الله تعالى بالنية في الطاعة :', ans: 'صواب', exp: 'عبارة صحيحة؛ هذا هو التعريف الاصطلاحي للإخلاص.' },
+            { id: 86, type: 'tf', q: 'قبول العمل ثمرة من ثمرات الإخلاص :', ans: 'صواب', exp: 'عبارة صحيحة؛ إن الله لا يقبل من العمل إلا ما كان له خالصاً وابتُغي به وجهه.' },
+            { id: 87, type: 'tf', q: 'من بركات النية الصالحة أن المباحات تقلب إلى عبادات :', ans: 'صواب', exp: 'عبارة صحيحة؛ وهي من أعظم ثمرات الإخلاص والنية الصالحة.' },
+            { id: 88, type: 'tf', q: 'التوبة سبب الفلاح والفوز بسعادة الدارين :', ans: 'صواب', exp: 'عبارة صحيحة؛ قال تعالى: (وتوبوا إلى الله جميعاً أيها المؤمنون لعلكم تفلحون).' },
+            { id: 89, type: 'tf', q: 'التوبة سبب للفلاح والفوز في الدارين، قال تعالى: (وتوبوا إلى الله جميعًا أيها المؤمنون لعلكم تفلحون) :', ans: 'صواب', exp: 'عبارة صحيحة؛ علّق الله الفلاح بالتوبة الصادقة.' },
+            { id: 90, type: 'tf', q: 'من صور تحقيق التوكل على الله الالتزام بأدعية الخروج من المنزل :', ans: 'صواب', exp: 'عبارة صحيحة؛ كقول «بسم الله توكلت على الله ولا حول ولا قوة إلا بالله».' },
+            { id: 91, type: 'tf', q: '"اللهم إني أستخيرك بعلمك وأستقدرك بقدرتك" دعاء يدل على كمال التوكل والتفويض قبل وقوع المقدور والرضا بعده :', ans: 'صواب', exp: 'عبارة صحيحة؛ دعاء الاستخارة مظهر عظيم من مظاهر التوكل وتفويض الأمر لله.' },
+            { id: 92, type: 'tf', q: 'الخوف المذموم هو ما يورث مرضًا أو موتًا أو همًا لازمًا للإنسان بحيث يقطع معه السعي في اكتساب الفضائل المحبوبة إلى الله :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأنه يوقع في اليأس والقنوط من رحمة الله ويثبط عن العمل.' },
+            { id: 93, type: 'tf', q: 'من ثمار الخوف من الله في الآخرة الاستظلال بظل الرحمن :', ans: 'صواب', exp: 'عبارة صحيحة؛ كما في حديث السبعة الذين يظلهم الله في ظله: «إني أخاف الله».' },
+            { id: 94, type: 'tf', q: 'الأمن والأمان أثر وثمرة من ثمار الخوف من الله عز وجل :', ans: 'صواب', exp: 'عبارة صحيحة؛ من خاف الله في الدنيا أمّنه الله يوم القيامة.' },
+            { id: 95, type: 'tf', q: 'غفران الذنوب ثمرة من ثمار الخوف من الله :', ans: 'صواب', exp: 'عبارة صحيحة؛ من ثمرات الخوف من الله في الآخرة مغفرة الذنوب ودخول الجنة.' },
+            { id: 96, type: 'tf', q: 'من علامات الشقاء: أن تعصي وترجو أن تنجو :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأن هذا من الغرور والأماني الكاذبة وليس من الرجاء المحمود.' },
+            { id: 97, type: 'tf', q: 'من فوائد الرجاء : أنه يوجب للعبد المزيد من معرفة الله وأسمائه ومعانيها :', ans: 'صواب', exp: 'عبارة صحيحة؛ كمعرفة أسمائه الحسنى المتعلقة بالرحمة والكرم والمغفرة.' },
+            { id: 98, type: 'tf', q: 'من أمثلة عبادات اللسان الفعلية نطق الشهادتين :', ans: 'صواب', exp: 'عبارة صحيحة؛ نطق الشهادتين أعظم عبادات اللسان الفعلية الواجبة.' },
+            { id: 99, type: 'tf', q: 'نطق الشهادة وتلاوة القرآن من أمثلة عبادات اللسان الفعلية :', ans: 'صواب', exp: 'عبارة صحيحة؛ كلاهما من العبادات التي يؤديها اللسان نطقاً.' },
+            { id: 100, type: 'tf', q: 'عبادات اللسان الفعلية تشمل : الواجب والمستحب :', ans: 'صواب', exp: 'عبارة صحيحة؛ كالشهادتين ورد السلام (واجب)، ودوام الذكر وتلاوة النفل (مستحب).' },
+            { id: 101, type: 'tf', q: 'تلاوة القرآن ودوام الذكر من عبادات اللسان الفعلية :', ans: 'صواب', exp: 'عبارة صحيحة؛ هي من أجلّ عبادات اللسان الفعلية.' },
+            { id: 102, type: 'tf', q: 'الصدق هو قول الحق في مواطن الهلاك :', ans: 'صواب', exp: 'عبارة صحيحة؛ هذا من أبلغ ما قيل في حقيقة الصدق وكماله.' },
+            { id: 103, type: 'tf', q: 'أعلى مراتب الصدق هي مرتبة الصديقية :', ans: 'صواب', exp: 'عبارة صحيحة؛ وهي المرتبة التي تلي مرتبة النبوة مباشرة.' },
+            { id: 104, type: 'tf', q: 'معنى قولنا : تلاوة القرآن الكريم : قراءته متتابعا مفهوم المعنى :', ans: 'صواب', exp: 'عبارة صحيحة؛ التلاوة مأخوذة من التلوّ وهو الإتباع والتتابع.' },
+            { id: 105, type: 'tf', q: 'ترتيل القرآن الكريم هو قراءته بتؤدة وطمأنينة بتبيين الحروف وإشباع الحركات ليكون أقرب لتفهمه وتدبره :', ans: 'صواب', exp: 'عبارة صحيحة؛ هذا هو تعريف مرتبة الترتيل.' },
+            { id: 106, type: 'tf', q: 'من معاني تلاوة القرآن الكريم : الاتباع :', ans: 'صواب', exp: 'عبارة صحيحة؛ معاني التلاوة الخمسة: القراءة، الاتباع، العمل، الرواية، الإنزال.' },
+            { id: 107, type: 'tf', q: 'من أوجه تلاوة القرآن الكريم : الاتباع :', ans: 'صواب', exp: 'عبارة صحيحة؛ اتباع أوامره واجتناب نواهيه.' },
+            { id: 108, type: 'tf', q: 'من مراتب تلاوة القرآن التحقيق، وهو : القراءة التي تكون فيها المبالغة بالإتيان بالشيء على حقه من غير زيادة فيه ولا نقصان :', ans: 'صواب', exp: 'عبارة صحيحة؛ هذا هو التعريف الدقيق لمرتبة التحقيق.' },
+            { id: 109, type: 'tf', q: 'مثال عبادة اللسان التركية ترك القذف :', ans: 'صواب', exp: 'عبارة صحيحة؛ ترك القذف والسب والغيبة من عبادات اللسان التركية (كف اللسان عن المحرم).' },
+            { id: 110, type: 'tf', q: 'أرشدنا النبي صلى الله عليه وسلم إلى الاستعاذة بالله من الشيطان الرجيم لعلاج الأثر الناتج عن المسابة :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأن الاستعاذة تطفئ الغضب وتطرد نزغ الشيطان عند المشاتمة.' },
+            { id: 111, type: 'tf', q: 'معنى ترك فضول الكلام هو ترك الكلام فيما لا ينفع في دين ولا دنيا، وترك الخوض فيما لا يعني الإنسان :', ans: 'صواب', exp: 'عبارة صحيحة؛ وهو من عبادات اللسان التركية للمكروه.' },
+            { id: 112, type: 'tf', q: 'حذر النبي صلى الله عليه وسلم من فضول الكلام وذلك في قوله صلى الله عليه وسلم : "من حسن إسلام المرء تركه ما لا يعنيه" :', ans: 'صواب', exp: 'عبارة صحيحة؛ الحديث أصل عظيم في حفظ اللسان والوقت عما لا يعني.' },
+            { id: 113, type: 'tf', q: 'يعتبر النظر الذي لا مضرة فيه في العاجل والآجل، ولا منفعة فيه من النظر المباح :', ans: 'صواب', exp: 'عبارة صحيحة؛ ما خلا من المضرة في الدنيا والآخرة فهو مباح.' },
+            { id: 114, type: 'tf', q: 'علاقة العبادات القلبية بعبادات الجوارح علاقة تلازم وتفاوت :', ans: 'صواب', exp: 'عبارة صحيحة؛ متلازمان لا ينفكان، وتتفاوت أعمال الجوارح بحسب ما في القلب.' },
+            { id: 115, type: 'tf', q: 'لا يمكن الحكم على الإنسان بأن من صفته الحياء إلا من خلال أفعاله وأقواله لأن الحياء من الأعمال القلبية :', ans: 'صواب', exp: 'عبارة صحيحة؛ الحياء خلق قلبي يظهر أثره على الجوارح والأقوال.' },
+            { id: 116, type: 'tf', q: 'يحكم على الإنسان أنه حيي من خلال أقواله وأفعاله :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأن الأفعال والأقوال ترجمان لما في القلب من الحياء.' },
+            { id: 117, type: 'tf', q: 'وضع جرائد النخل على القبور بقصد تخفيف عذاب القبر عن الميت من خصائص النبي ﷺ :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأن النبي ﷺ أُطلع بالوحي على حال صاحبي القبرين، فلا يُشرع لغيره فعل ذلك.' },
+            { id: 118, type: 'tf', q: 'من كمال الطهارة قص الأظافر للبعد عن مشابهة الحيوان ذي المخلب :', ans: 'صواب', exp: 'عبارة صحيحة؛ تقليم الأظافر من خصال الفطرة والنظافة.' },
+            { id: 119, type: 'tf', q: 'المقصود بالفطرة: ما فطر الناس على حسنه أو جبلوا على حسنه :', ans: 'صواب', exp: 'عبارة صحيحة؛ وتطلق الفطرة أيضاً على السنة الخالصة ودين الإسلام.' },
+            { id: 120, type: 'tf', q: 'نهى الرسول ﷺ عن الصلاة بحضرة طعام يريد الشخص أكله، أو حال مدافعة الأخبثين؛ لأن ذلك يمنع حضور القلب في الصلاة، ويُلحق بهاتين الحالتين غيرهما من الحالات التي تشغل القلب وتذهب الخشوع :', ans: 'صواب', exp: 'عبارة صحيحة؛ العلة هي انشغال القلب وذهاب الخشوع في الصلاة.' },
+            { id: 121, type: 'tf', q: 'قول النبي ﷺ: «لا صلاة بحضرة طعام ...» دليل على أهمية حضور القلب أثناء الصلاة :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأن روح الصلاة ومقصودها هو الخشوع وحضور القلب.' },
+            { id: 122, type: 'tf', q: 'مما أثر عن السيدة عائشة رضي الله عنها أنها كانت أكثر زوجات النبي ﷺ علمًا :', ans: 'صواب', exp: 'عبارة صحيحة؛ كانت رضي الله عنها مرجعاً للصحابة في الفقه والحديث.' },
+            { id: 123, type: 'tf', q: 'تضعف صلاة الرجل في جماعة إلى خمس وعشرين ضعفًا :', ans: 'صواب', exp: 'عبارة صحيحة؛ كما ثبت في الصحيحين (وجاء في رواية: بسبع وعشرين درجة).' },
+            { id: 124, type: 'tf', q: 'من أسباب مضاعفة أجر صلاة الجماعة ما يحصل للمرء من انتظاره الصلاة :', ans: 'صواب', exp: 'عبارة صحيحة؛ فالمصلي في صلاة ما دام ينتظر الصلاة.' },
+            { id: 125, type: 'tf', q: 'في قول النبي ﷺ: "فإذا صلى لم تزل الملائكة تصلي عليه" دليل على ثبوت دعاء الملائكة للإنسان الطائع لله ورسوله :', ans: 'صواب', exp: 'عبارة صحيحة؛ تقول الملائكة: اللهم صل عليه، اللهم ارحمه.' },
+            { id: 126, type: 'tf', q: 'السفر الذي يقصد به صاحبه المعصية لا يبيح القصر وجمع الصلاة :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأن الرخص لا تُستباح بالمعاصي إعانةً عليها.' },
+            { id: 127, type: 'tf', q: 'اشتهر الصحابي عبد الله بن عمرو رضي الله عنه بالإكثار من العبادة :', ans: 'صواب', exp: 'عبارة صحيحة؛ وأرشده النبي ﷺ إلى التوسط والاعتدال وإعطاء كل ذي حق حقه.' },
+            { id: 128, type: 'tf', q: 'يجوز الرهن في الحضر والسفر :', ans: 'صواب', exp: 'عبارة صحيحة؛ فقد رهن النبي ﷺ درعه عند يهودي في المدينة (في الحضر).' },
+            { id: 129, type: 'tf', q: 'يجوز شراء الأشياء بثمن مؤجل :', ans: 'صواب', exp: 'عبارة صحيحة؛ اشترى النبي ﷺ طعاماً من يهودي إلى أجل ورهنه درعه.' },
+            { id: 130, type: 'tf', q: 'معنى "وجاء" في الحديث أن الصيام يخفف من الشهوة لدى الإنسان :', ans: 'صواب', exp: 'عبارة صحيحة؛ «فإنه له وجاء» أي قاطع وكاسر لحدة الشهوة.' },
+            { id: 131, type: 'tf', q: 'الأصل في أمر النبي ﷺ المستطيع للنكاح أن يتزوج في قوله: "من استطاع منكم الباءة فليتزوج" محمول على الاستحباب المؤكد :', ans: 'صواب', exp: 'عبارة صحيحة؛ ويجب عند خوف العنت (الوقوع في المحرم).' },
+            { id: 132, type: 'tf', q: 'قول النبي ﷺ: "يا معشر الشباب..." خص الشباب بالنداء لأن داعي الشهوة فيهم أقوى :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأن مرحلة الشباب هي مظنة قوة الشهوة والحاجة للعفاف.' },
+            { id: 133, type: 'tf', q: 'كان من منهج النبي ﷺ التعريض لا التصريح بالأسماء، ولا التجريح في الإنكار بالمجالس :', ans: 'صواب', exp: 'عبارة صحيحة؛ كان يقول «ما بال أقوام يقولون كذا وكذا» ستراً ورفقاً بهم.' },
+            { id: 134, type: 'tf', q: 'التشديد على النفس في العبادات إلى حد يخرج عن سنة النبي محمد ﷺ هو من البدع التي تكون في: صفة أداء العبادة المشروعة :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأن أصل العبادة مشروع ولكن التشديد غيّر صفة أدائها النبوية.' },
+            { id: 135, type: 'tf', q: 'أداء الأذكار المشروعة بأصوات جماعية مطربة بدعة في صفة أداء العبادة :', ans: 'صواب', exp: 'عبارة صحيحة؛ أصل الذكر مشروع، لكن هذه الهيئة الجماعية المطربة محدثة في الصفة.' },
+            { id: 136, type: 'tf', q: 'كل بدعة في الدين ضلالة ومحرمة :', ans: 'صواب', exp: 'عبارة صحيحة؛ لقوله ﷺ: «وكل بدعة ضلالة».' },
+            { id: 137, type: 'tf', q: 'الطواف بالقبور تقربا لأصحابها كفر صراح :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأن الطواف عبادة لا يجوز صرفها لغير الله ولا في غير البيت الحرام.' },
+            { id: 138, type: 'tf', q: 'جمع القرآن وتدوين السنة لا يدخل في باب البدع :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأنه من المصالح المرسلة التي لها أصل في الشريعة لحفظ الدين.' },
+            { id: 139, type: 'tf', q: 'جمع القرآن الكريم وتدوين السنة النبوية لا يعتبر من البدع لأن له أصلا في الشريعة :', ans: 'صواب', exp: 'عبارة صحيحة؛ وقد كان القرآن مكتوباً في العهد النبوي مفرقاً فجُمع في مصحف واحد.' },
+            { id: 140, type: 'tf', q: 'معنى حديث النبي ﷺ: "فمن رغب عن سنتي فليس مني" أي ليس من أهل طريقتي ومنهجي :', ans: 'صواب', exp: 'عبارة صحيحة؛ المراد البراءة من طريقته لمخالفته هدي النبي ﷺ في اليسر والاعتدال.' },
+            { id: 141, type: 'tf', q: 'رفع المستحبات إلى مرتبة الواجبات لا يجوز وهو من التشدد في العبادة :', ans: 'صواب', exp: 'عبارة صحيحة؛ لأن فيه إيجاب ما لم يوجبه الله والتضييق على الناس.' },
+            { id: 142, type: 'tf', q: 'من مبادئ الإسلام الأساسية أن الناس كلهم من أصل واحد :', ans: 'صواب', exp: 'عبارة صحيحة؛ كلكم لآدم وآدم من تراب، لا فضل لعربي على أعجمي إلا بالتقوى.' },
+
+            // ================= SECTION 2: MULTIPLE CHOICE QUESTIONS (143 to 211) =================
+            { id: 143, type: 'mcq', q: 'من معاني العبادة في اللغة :', options: ['التذلل والخضوع', 'الأقوال والأفعال الظاهرة', 'الباطنة', 'الإخلاص'], ans: 0, exp: 'العبادة في اللغة معناها التذلل والخضوع. الأقوال والأفعال الظاهرة والباطنة جزء من تعريفها الاصطلاحي، والإخلاص من مرتكزاتها.' },
+            { id: 144, type: 'mcq', q: 'من مرتكزات العبادة :', options: ['الإخلاص', 'المتابعة', 'الرجاء', 'أ + ب'], ans: 3, exp: 'مرتكزات العبادة اثنين: الإخلاص لله، والمتابعة للنبي ﷺ. فالجواب (أ + ب). والرجاء عبادة قلبية، مو من مرتكزات العبادة.' },
+            { id: 145, type: 'mcq', q: 'العبادة اللحظية مثال لتنوع العبادة باعتبار :', options: ['الوقت', 'الفرد والجماعة', 'الفعل والترك', 'الحكم الشرعي'], ans: 0, exp: 'العبادات تتنوع باعتبار الوقت إلى يومية وأسبوعية وسنوية وعمرية ولحظية. فالعبادة اللحظية تقسيم باعتبار «الوقت».' },
+            { id: 146, type: 'mcq', q: 'من أمثلة العبادات القلبية :', options: ['الإخلاص', 'صلاة العشاء', 'صلاة الوتر', 'الصيام'], ans: 0, exp: 'الإخلاص عمل في القلب ما يشوفه الناس، فهو عبادة قلبية. والصلاة والصيام عبادات بدنية.' },
+            { id: 147, type: 'mcq', q: 'استدل المنهاج بقول النبي - عليه الصلاة والسلام - : «... من سلك طريقًا يلتمس فيه علمًا سهل الله له به طريقًا إلى الجنة ...» على أن من صور شمولية العبادة لمناحي الحياة :', options: ['المزارع في حقله', 'الطالب في تحصيله للعلم', 'الموظف في وظيفته', 'التاجر في تجارته'], ans: 1, exp: 'الحديث يتكلم عن طلب العلم: «من سلك طريقًا يلتمس فيه علمًا»، فهو دليل على صورة «الطالب في تحصيله للعلم».' },
+            { id: 148, type: 'mcq', q: 'قوله تعالى: (وآخرون يضربون في الأرض يبتغون من فضل الله) هذه الآية أصل في :', options: ['الزراعة', 'التجارة', 'السعي', 'الكسب'], ans: 1, exp: '«يضربون في الأرض» يعني يسافرون، و«يبتغون من فضل الله» يعني يطلبون الربح. والمنهاج ذكر الآية أصلًا في «التجارة».' },
+            { id: 149, type: 'mcq', q: 'من أهم أسباب المشكلات المالية في الأسر :', options: ['التخطيط المالي', 'عدم الاحتساب في الإنفاق', 'زيادة الدخل', 'زيادة النفقات الضرورية'], ans: 1, exp: 'المنهاج ذكر إن من أهم أسباب المشكلات المالية في الأسر «عدم الاحتساب في الإنفاق». والتخطيط المالي وزيادة الدخل حلول مو أسباب.' },
+            { id: 150, type: 'mcq', q: 'من إرشادات التعامل مع البيئة :', options: ['النهي عن التخلي في الطريق أو الظل', 'النهي عن البول في الماء الراكد', 'النهي عن استخدام الماء الراكد للاغتسال', 'جميع ما سبق'], ans: 3, exp: 'الشرع نهى عن التخلي في الطريق والظل، وعن البول في الماء الراكد، وعن الاغتسال فيه، وكلها من إرشادات التعامل مع البيئة، فالجواب «جميع ما سبق».' },
+            { id: 151, type: 'mcq', q: 'المراد بقول النبي صلى الله عليه وسلم: اتقوا اللعانين :', options: ['ابتعدوا عن المنافقين', 'اجتنبوا الزنا', 'قضاء الحاجة في طريق الناس وظلهم', 'اجتنبوا اللعن'], ans: 2, exp: '«اتقوا اللعانين» يعني الأمرين اللي يجيبون اللعن لصاحبهم: قضاء الحاجة في طريق الناس أو في ظلهم.' },
+            { id: 152, type: 'mcq', q: 'من شمولية العبادة في الإسلام رعاية الحيوان ويكون ذلك من خلال :', options: ['حرمة تعذيب الحيوان', 'تعذيب الحيوان', 'سوء معاملة الحيوان', 'عدم إطعام الحيوان'], ans: 0, exp: 'رعاية الحيوان في الإسلام تكون بتحريم تعذيبه، وبإطعامه والإحسان إليه. باقي الخيارات كلها إساءة للحيوان.' },
+            { id: 153, type: 'mcq', q: 'مبدأ التكاليف كلها ومصدرها وأساسها هو :', options: ['القلب', 'العقل', 'اللسان', 'العين'], ans: 0, exp: 'القلب مبدأ التكاليف ومصدرها وأساسها، لأن صلاح الجوارح تابع لصلاحه: «ألا وإن في الجسد مضغة إذا صلحت صلح الجسد كله».' },
+            { id: 154, type: 'mcq', q: 'أثر العبادات القلبية أعظم من أثر عبادات :', options: ['الجهرية', 'البصر', 'الجوارح', 'القولية'], ans: 2, exp: 'أثر العبادات القلبية أعظم من أثر عبادات «الجوارح»، لأن القلب أصلها، والجوارح تابعة له.' },
+            { id: 155, type: 'mcq', q: 'من وسائل حياة القلب :', options: ['ذكر الله', 'تذكر الموت', 'طلب العلم', 'جميع ما سبق'], ans: 3, exp: 'من وسائل حياة القلب ذكر الله، وتذكر الموت، وطلب العلم. فالجواب «جميع ما سبق».' },
+            { id: 156, type: 'mcq', q: 'له أثره العظيم في صلاح القلب :', options: ['قراءة القرآن', 'التفكر بالقرآن', 'التدبر بالقرآن', 'جميع ما سبق'], ans: 3, exp: 'القرآن له أثر عظيم في صلاح القلب بقراءته والتفكر فيه وتدبره، فالجواب «جميع ما سبق».' },
+            { id: 157, type: 'mcq', q: 'حياة القلب تكمن في :', options: ['جمع المال', 'كثرة الجدال', 'مجالسة الصالحين', 'اتباع الهوى والشهوات'], ans: 2, exp: 'من وسائل حياة القلب مجالسة الصالحين. جمع المال والجدال واتباع الهوى تقسي القلب.' },
+            { id: 158, type: 'mcq', q: 'في حديث معاذ بن جبل رضي الله عنه: "تعلموا العلم..." ذكر لفضائل العلم، ومنها :', options: ['فوز عظيم في الدنيا فقط', 'حياة القلب من الجهل', 'راحة الجسد', 'قسوة القلب'], ans: 1, exp: 'حديث معاذ في فضل العلم يذكر إن العلم «حياة القلوب من الجهل». باقي الخيارات ما وردت فيه.' },
+            { id: 159, type: 'mcq', q: 'من الأعمال الباطنة التي لا يعلمها إلا الله :', options: ['الصلاة', 'الإخلاص', 'صلة الرحم', 'الصدقة'], ans: 1, exp: 'الإخلاص عمل في القلب ما يطلع عليه إلا الله. أما الصلاة والصدقة وصلة الرحم فأعمال ظاهرة.' },
+            { id: 160, type: 'mcq', q: 'من ثمرات الإخلاص في عبادة الله: قلب المباحات إلى :', options: ['نوافل', 'مباحات', 'عبادات', 'مكروهات'], ans: 2, exp: 'من ثمرات الإخلاص إن المباحات (مثل الأكل والنوم والعمل) تنقلب إلى «عبادات» يؤجر عليها، إذا نوى فيها نية صالحة.' },
+            { id: 161, type: 'mcq', q: 'تعظيم العمل الصغير حتى يصبح كبيرا من ثمرات :', options: ['الخوف من الله', 'الإخلاص', 'التوكل', 'التوبة'], ans: 1, exp: 'تعظيم العمل الصغير ثاني ثمرة من ثمرات «الإخلاص» الخمس في الملزمة: «رب عمل صغير تعظمه النية».' },
+            { id: 162, type: 'mcq', q: 'من ثمرات الإخلاص لله تعالى :', options: ['قبول العمل وتعظيم العمل الصغير', 'إدراك أجر العمل وإن عجز عنه وقلب المباحات إلى عبادات', 'تفريج الكرب والهموم', 'جميع ما سبق'], ans: 3, exp: 'ثمرات الإخلاص خمس: قبول العمل، وتعظيم العمل الصغير، وإدراك أجر العمل وإن عجز عنه، وقلب المباحات إلى عبادات، وتفريج الكروب. فالجواب «جميع ما سبق».' },
+            { id: 163, type: 'mcq', q: 'من فضائل التوبة :', options: ['سبب للفلاح والفوز بسعادة الدارين', 'تكفر السيئات وتبدل السيئات بحسنات', 'سبب لإنعام الله وتفضّله وسبب لحب الله فهو يحب التوابين', 'جميع ما سبق'], ans: 3, exp: 'من فضائل التوبة: الفلاح وسعادة الدارين، وتكفير السيئات وتبديلها حسنات، وحب الله للتوابين. فالجواب «جميع ما سبق».' },
+            { id: 164, type: 'mcq', q: 'قال تعالى: (إلا من تاب وآمن وعمل عملًا صالحًا فأولئك يبدل الله سيئاتهم حسنات...) في الآية :', options: ['نهي من الله عن الغفلة', 'أمر من الله بالصلاة والزكاة', 'بشارة من الله بالتوبة على من تاب', 'وعيد من الله على الكافرين'], ans: 2, exp: 'الآية بشارة للتائب: (فأولئك يبدل الله سيئاتهم حسنات). يعني الله يقبل توبته ويبدل سيئاته حسنات.' },
+            { id: 165, type: 'mcq', q: 'ليست من شروط التوبة الصادقة :', options: ['الإقلاع عن الذنب والعزم على عدم العودة إليه', 'الرغبة الغير مؤكدة للتحلل من الحقوق', 'الندم على ما فات من الذنوب', 'التحلل من الحقوق والمظالم'], ans: 1, exp: 'شرط التوبة إنه يتحلل من الحقوق فعلًا، مو بس «رغبة غير مؤكدة». فهذا الخيار هو اللي ما هو من الشروط.' },
+            { id: 166, type: 'mcq', q: 'من شروط التوبة الصادقة :', options: ['الإقلاع عن الذنب والعزم على عدم العودة إليه', 'الندم على ما فات من الذنوب', 'التحلل من الحقوق والمظالم', 'جميع ما سبق'], ans: 3, exp: 'شروط التوبة الصادقة ثلاثة: الإقلاع والعزم على عدم العودة، والندم على ما فات، والتحلل من الحقوق والمظالم. فالجواب «جميع ما سبق».' },
+            { id: 167, type: 'mcq', q: 'الأخذ بالأسباب والسعي في طلب الرزق بطرق مشروعة يسمى :', options: ['الإخلاص', 'التوبة', 'التوكل', 'الخوف'], ans: 2, exp: 'التوكل: اعتماد القلب على الله مع الأخذ بالأسباب والسعي في طلب الرزق بالطرق المشروعة.' },
+            { id: 168, type: 'mcq', q: 'قال الله تعالى (ومن يتق الله يجعل له مخرجًا ويرزقه من حيث لا يحتسب) من دلالات الآية :', options: ['أن التقوى لا تؤثر في الرزق', 'أن الله بيده مقاليد الأمور وهو على كل شيء قدير', 'أن الرزق بيد الإنسان واجتهاده', 'أن الأعمال لا علاقة لها بتيسير الأمور'], ans: 1, exp: 'الآية تبين أن الله بيده مقاليد الأمور فيجعل للمتقي مخرجًا ويرزقه من حيث لا يحتسب. باقي الخيارات عكس معنى الآية.' },
+            { id: 169, type: 'mcq', q: '"ضد الأمن لغة، وهو تألم القلب بسبب توقع مكروه" تعريف لـ :', options: ['التوكل', 'الخوف', 'الإخلاص', 'النية'], ans: 1, exp: 'الخوف لغة ضد الأمن، واصطلاحًا تألم القلب بسبب توقع مكروه.' },
+            { id: 170, type: 'mcq', q: 'هو تألم يصحبه فعل ما أوجب الله وترك ما حرم الله :', options: ['الخوف من الله', 'الرجاء في رحمة الله', 'التوبة النصوح', 'الرغبة في طاعة الله'], ans: 0, exp: 'الخوف من الله المحمود هو اللي يحمل صاحبه على فعل ما أوجب الله وترك ما حرم.' },
+            { id: 171, type: 'mcq', q: 'قال ابن رجب رحمه الله: "القدر الواجب من ........ ما حمل على أداء الفرائض واجتناب المحارم" املأ الفراغ :', options: ['التوكل', 'الخوف', 'الإخلاص', 'النية'], ans: 1, exp: 'قول ابن رجب عن «الخوف»: القدر الواجب منه ما حمل على أداء الفرائض واجتناب المحارم.' },
+            { id: 172, type: 'mcq', q: 'من ثمار الخوف من الله في الدنيا :', options: ['التمكين في الأرض وزيادة الإيمان والطمأنينة', 'يبعث على العمل الصالح والإخلاص', 'عدم طلب المقابل في الدنيا', 'جميع ما سبق'], ans: 3, exp: 'من ثمار الخوف من الله في الدنيا: التمكين وزيادة الإيمان والطمأنينة، والبعث على العمل الصالح والإخلاص، وعدم طلب المقابل. فالجواب «جميع ما سبق».' },
+            { id: 173, type: 'mcq', q: 'أثر الخوف من الله في الدنيا ؟', options: ['غفران الذنوب', 'دخول الجنة', 'زيادة الإيمان والطمأنينة', 'الاستظلال بظل الرحمن'], ans: 2, exp: 'زيادة الإيمان والطمأنينة ثمرة «دنيوية» للخوف من الله. أما غفران الذنوب ودخول الجنة والاستظلال بظل الرحمن فهي ثمرات «أخروية».' },
+            { id: 174, type: 'mcq', q: 'الاستبشار بوجود فضل الرب جل جلاله، والارتياح لمطالعة كرمه :', options: ['الرجاء', 'التوكل', 'الإخلاص', 'الخوف'], ans: 0, exp: '«الاستبشار بوجود فضل الرب والارتياح لمطالعة كرمه» تعريف «الرجاء».' },
+            { id: 175, type: 'mcq', q: '(إظهار العبودية والفاقة والحاجة إلى ما يرجوه العبد من ربه) من فوائد عبادة :', options: ['الرجاء', 'التوبة', 'التوكل', 'الخوف'], ans: 0, exp: 'من فوائد الرجاء إظهار العبودية والفقر والحاجة لله، لأن الراجي يطلب من ربه ما يرجوه.' },
+            { id: 176, type: 'mcq', q: 'من أمثلة عبادة اللسان الفعلية المستحبة :', options: ['قراءة القرآن', 'الصلاة', 'الحج', 'الصوم'], ans: 0, exp: 'قراءة القرآن هي الوحيدة اللي يقوم بها اللسان من بين الخيارات، وهي مستحبة. الصلاة والحج والصوم عبادات بدنية تشترك فيها جوارح كثيرة، فما تصنف عبادة لسان.' },
+            { id: 177, type: 'mcq', q: 'التلاوة تأتي في القرآن الكريم على عدة معان ، منها :', options: ['القراءة والاتباع', 'العمل والرواية', 'الإنزال', 'جميع ما سبق'], ans: 3, exp: 'كل الخيارات صحيحة: القراءة والاتباع والعمل والرواية والإنزال، وهي المعاني الخمسة للتلاوة في القرآن، فالجواب «جميع ما سبق».' },
+            { id: 178, type: 'mcq', q: 'إدراج قراءة القرآن وسرعتها مع مراعاة أحكام التجويد يسمى :', options: ['الحدر', 'الترتيل', 'التدوير', 'التوسط'], ans: 0, exp: 'الحدر هو الإسراع في القراءة مع المحافظة على أحكام التجويد. الترتيل بطيء ومتأن، والتدوير والتوسط بين الحدر والترتيل.' },
+            { id: 179, type: 'mcq', q: 'دعاء المرء صاحبه بما يكرهه من اسم أو صفة يطلق على :', options: ['الغيبة', 'الفحش', 'النميمة', 'التنابز بالألقاب'], ans: 3, exp: 'التنابز بالألقاب هو أن تنادي صاحبك باسم أو صفة يكرهها. الغيبة ذكرك أخاك بما يكره في غيابه، والنميمة نقل الكلام للإفساد، والفحش الكلام القبيح.' },
+            { id: 180, type: 'mcq', q: 'من الأمثلة على عبادة اللسان التركية المكروهة :', options: ['القول على الله بدون علم', 'فضول الكلام', 'السب والشتم', 'شهادة الزور'], ans: 1, exp: 'فضول الكلام (الكلام فيما لا يعني) مكروه وليس محرمًا. أما القول على الله بلا علم والسب والشتم وشهادة الزور فكلها محرمة، فتركها ترك المحرم.' },
+            { id: 181, type: 'mcq', q: 'من الأمثلة على عبادة اللسان التي فيها ترك للمكروه :', options: ['ترك فضول الكلام', 'ترك السب والشتم', 'ترك القول على الله بدون علم', 'ترك شهادة الزور'], ans: 0, exp: 'الوحيد المكروه بين الخيارات هو فضول الكلام، فتركه ترك المكروه. الباقي (السب والقول على الله بلا علم وشهادة الزور) محرمات.' },
+            { id: 182, type: 'mcq', q: 'فضول النظر الذي لا مصلحة فيه هو من النظر :', options: ['الجائز', 'المكروه', 'المباح', 'الواجب'], ans: 1, exp: 'فضول النظر هو النظر اللي ما فيه مصلحة، وحكمه مكروه، مثل ما أن فضول الكلام مكروه.' },
+            { id: 183, type: 'mcq', q: '(قول باللسان، وعمل بالأركان، واعتقاد بالقلب يزيد بالطاعة وينقص بالمعصية)، هو تعريف :', options: ['الإخلاص', 'النية', 'الإيمان', 'التوكل'], ans: 2, exp: 'هذا تعريف الإيمان عند أهل السنة: قول باللسان، وعمل بالأركان (الجوارح)، واعتقاد بالقلب، يزيد بالطاعة وينقص بالمعصية.' },
+            { id: 184, type: 'mcq', q: 'لكل جارحة من جوارح الإنسان عبادة ، وقد جمعت أمثلة عبادات الجوارح في :', options: ['التوكل', 'الصلاة', 'الإخلاص', 'الصدق'], ans: 1, exp: 'الصلاة تجمع عبادات الجوارح كلها: اللسان يقرأ ويذكر، والبدن يقوم ويركع ويسجد، والعين تنظر لموضع السجود. أما التوكل والإخلاص فعبادات قلبية، والصدق عبادة لسان.' },
+            { id: 185, type: 'mcq', q: 'من الصحابة الذين نبغوا في الفقه والفهم :', options: ['أبو هريرة', 'ابن عباس', 'أنس بن مالك', 'عائشة'], ans: 1, exp: 'ابن عباس رضي الله عنهما اشتهر بالفقه والفهم، ودعا له النبي ﷺ: «اللهم فقهه في الدين وعلمه التأويل»، ولقب بحبر الأمة. أما أبو هريرة فاشتهر بالحفظ.' },
+            { id: 186, type: 'mcq', q: 'قال عنه عمر بن الخطاب رضي الله عنه: (ذاكم فتى الكهول، له لسان سؤول، وقلب عقول) :', options: ['أبو هريرة', 'أنس بن مالك', 'عبد الله بن عباس', 'عبد الله بن عمرو'], ans: 2, exp: 'عمر بن الخطاب قال هذا الوصف عن ابن عباس، لأنه كان صغير السن لكن علمه علم الكبار (فتى الكهول)، كثير السؤال، وعاقل القلب.' },
+            { id: 187, type: 'mcq', q: 'نقل الكلام بين الناس على وجه الإفساد يسمى :', options: ['النميمة', 'المكر', 'الإخلاص', 'الكذب'], ans: 0, exp: 'تعريف النميمة: نقل الكلام بين الناس على وجه الإفساد بينهم، والحديث ذكر أنها سبب لعذاب القبر.' },
+            { id: 188, type: 'mcq', q: 'من الصحابة الذين نبغوا بالحفظ :', options: ['عبد الله بن العباس', 'عمر بن الخطاب', 'أبو هريرة', 'أنس بن مالك'], ans: 2, exp: 'أبو هريرة رضي الله عنه أكثر الصحابة حفظًا ورواية للحديث، لأنه لازم النبي ﷺ ودعا له بالحفظ. أما ابن عباس فاشتهر بالفقه والفهم.' },
+            { id: 189, type: 'mcq', q: 'يقول النبي ﷺ: "الفطرة خمس" وذكر منها :', options: ['الختان والاستحداد', 'قص الشارب وتقليم الأظافر', 'نتف الإبط', 'جميع ما سبق'], ans: 3, exp: 'خصال الفطرة الخمس في الحديث: الختان، والاستحداد، وقص الشارب، وتقليم الأظافر، ونتف الإبط، وكل الخيارات منها، فالجواب «جميع ما سبق».' },
+            { id: 190, type: 'mcq', q: 'الاستحداد يقصد به :', options: ['تنظيف الجسم من الأوساخ', 'إزالة الشعر الزائد من الوجه', 'قص الأظافر وتقليمها', 'حلق شعر العانة'], ans: 3, exp: 'الاستحداد مأخوذ من الحديدة (الموسى)، والمقصود به حلق شعر العانة.' },
+            { id: 191, type: 'mcq', q: 'تهذيب أطراف الشعر الذي ينبت فوق الشفة العليا تعريف لـ :', options: ['حلق شعر العانة', 'حلق شعر الرأس', 'حلق الشارب', 'جميع ما سبق'], ans: 2, exp: 'الشارب هو الشعر النابت فوق الشفة العليا، والسنة تهذيب أطرافه حتى تظهر الشفة. باقي الخيارات: العانة اسمها الاستحداد، وشعر الرأس ما هو من خصال الفطرة الخمس، فيبقى «الشارب» هو المقصود بالتعريف.' },
+            { id: 192, type: 'mcq', q: 'من أسباب مضاعفة أجر الصلاة في جماعة :', options: ['أن يكون متوضئًا محسنًا الوضوء', 'أن يخرج إلى المسجد بنية خالصة', 'أن يبادر بصلاة ما كتب له إلى حين أن يصل إلى المسجد', 'جميع ما سبق'], ans: 3, exp: 'الحديث ذكر كل هذي الأسباب: إحسان الوضوء، والخروج للمسجد بنية الصلاة فقط، وانتظار الصلاة، فالجواب «جميع ما سبق».' },
+            { id: 193, type: 'mcq', q: 'من أصول الأعذار المبيحة للجمع بين الصلاتين :', options: ['السفر', 'المطر', 'المرض', 'جميع ما سبق'], ans: 3, exp: 'أصول الأعذار المبيحة للجمع ثلاثة: السفر، والمطر، والمرض، فالجواب «جميع ما سبق».' },
+            { id: 194, type: 'mcq', q: 'حكم الجمع بين الصلوات لغير عذر يبيحه :', options: ['لا يجوز وهو من كبائر الذنوب', 'يجوز', 'لا يجوز وهو من صغائر الذنوب', 'مستحبة'], ans: 0, exp: 'الكتاب نص على أن الجمع لغير عذر لا يجوز وهو من كبائر الذنوب، لأنه إخراج للصلاة عن وقتها.' },
+            { id: 195, type: 'mcq', q: 'الترتيب الأكمل والأفضل لشعائر الحج يوم العيد كالتالي :', options: ['الحلق، ثم الإفاضة، ثم الرمي، ثم النحر', 'الرمي، ثم النحر، ثم الحلق، ثم الإفاضة', 'النحر، ثم الرمي، ثم الحلق، ثم الإفاضة', 'الإفاضة، ثم الحلق، ثم الرمي، ثم النحر'], ans: 1, exp: 'الترتيب الأكمل يوم العيد: رمي جمرة العقبة، ثم نحر الهدي، ثم الحلق، ثم طواف الإفاضة. ولو قدم أو أخر جاز لقوله ﷺ «افعل ولا حرج».' },
+            { id: 196, type: 'mcq', q: 'قال له النبي ﷺ : "إنك لغلام معلم" :', options: ['أبو هريرة', 'عبد الله بن عباس', 'عبد الله بن عمرو', 'عبد الله بن مسعود'], ans: 3, exp: 'قالها النبي ﷺ لعبد الله بن مسعود لما كان غلامًا يرعى الغنم، ثم صار من كبار علماء الصحابة.' },
+            { id: 197, type: 'mcq', q: 'صحابي جليل، أثنى الرسول ﷺ على قراءته للقرآن :', options: ['أبو هريرة', 'عبد الله بن مسعود', 'أنس بن مالك', 'عبد الله بن عمرو'], ans: 1, exp: 'النبي ﷺ قال: «من أحب أن يقرأ القرآن غضًا كما أنزل فليقرأه على قراءة ابن أم عبد»، يعني ابن مسعود رضي الله عنه.' },
+            { id: 198, type: 'mcq', q: '(الرهط) لفظ يطلق ويراد به :', options: ['بين الواحد والخمسة', 'بين الثلاثة والعشرة', 'بين الرابعة والثامنة', 'بين الثانية والعاشرة'], ans: 1, exp: 'الرهط في اللغة: الجماعة من الثلاثة إلى العشرة.' },
+            { id: 199, type: 'mcq', q: 'أحد هذه العبارات ليست من البدع في العبادة :', options: ['التشديد على النفس بالعبادة', 'مقالات الفرق الضالة', 'زيادة في العبادات', 'إضافة طقوس غير مشروعة في العبادة'], ans: 1, exp: 'مقالات الفرق الضالة «بدعة قولية اعتقادية» وهي النوع الأول، مو بدعة في العبادة. أما التشديد والزيادة وإضافة طقوس فكلها بدع في العبادات.' },
+            { id: 200, type: 'mcq', q: 'أداء الذكر بطريقة جماعية مع التلحين والرقص، وهو بدعة في :', options: ['أصل العبادة', 'وقت أداء العبادة', 'زيادة أداء العبادة', 'صفة أداء العبادة'], ans: 3, exp: 'الذكر عبادة مشروعة الأصل، فالبدعة هنا في طريقة أدائه (جماعي مع تلحين ورقص)، يعني بدعة في «صفة أداء العبادة».' },
+            { id: 201, type: 'mcq', q: 'من البدع ما هو كفر صراح مثل :', options: ['طواف القبور تقربا لأصحابها', 'تقديم الذبائح والنذور لها', 'دعاء أصحابها والاستغاثة بهم', 'جميع ما سبق'], ans: 3, exp: 'كل الخيارات من البدع اللي هي كفر صراح: الطواف بالقبور تقربًا، وتقديم الذبائح والنذور لها، ودعاء أصحابها والاستغاثة بهم، فالجواب «جميع ما سبق».' },
+            { id: 202, type: 'mcq', q: 'المراد بالبدعة في قول عمر بن الخطاب رضي الله عنه في صلاة التراويح: (نعمت البدعة) :', options: ['البدعة العملية', 'البدعة اللغوية', 'منهج جديد في العبادة', 'طريقة غير مشروعة'], ans: 1, exp: 'عمر رضي الله عنه قصد البدعة «اللغوية»، يعني الشيء الجديد في صورته، لأن التراويح جماعة لها أصل من فعل النبي ﷺ، فهي مو بدعة شرعية.' },
+            { id: 203, type: 'mcq', q: 'العبادات لا بد فيها من الالتزام بما ورد بالكتاب والسنة، وهذا معنى قولنا: العبادات :', options: ['اختيارية', 'اجتهادية', 'توقيفية', 'فطرة'], ans: 2, exp: 'العبادات «توقيفية» يعني ما يُشرع منها شيء إلا بدليل من الكتاب والسنة، وما فيها مجال للاجتهاد أو الاختيار.' },
+            { id: 204, type: 'mcq', q: 'قال الفضيل بن عياض: ترك العمل من أجل الناس ..... :', options: ['نفاق', 'رياء', 'ابتعاد عن الحق', 'كذب'], ans: 1, exp: 'قول الفضيل بن عياض: «ترك العمل من أجل الناس رياء، والعمل من أجل الناس شرك».' },
+            { id: 205, type: 'mcq', q: 'من أسباب تأجيل التوبة :', options: ['التسويف', 'الخوف من الرجوع للذنب', 'الخوف من همز ولمز الناس واليأس من رحمة الله', 'جميع ما سبق'], ans: 3, exp: 'الكتاب ذكر أسباب تأجيل التوبة: التسويف، والخوف من الرجوع للذنب، والخوف من همز الناس ولمزهم، واليأس من رحمة الله، فالجواب «جميع ما سبق».' },
+            { id: 206, type: 'mcq', q: 'من صور فعل السبب والتوكل على الله تعالى :', options: ['قوله ﷺ (إنما الأعمال بالنيات)', 'قوله ﷺ (الدين النصيحة)', 'قوله ﷺ (اعقلها وتوكل)', 'قوله ﷺ (من كان يؤمن بالله واليوم الآخر فليكرم ضيفه)'], ans: 2, exp: 'قوله ﷺ للأعرابي «اعقلها وتوكل» يجمع فعل السبب (ربط الناقة) مع التوكل على الله. باقي الأحاديث ما لها علاقة بالتوكل.' },
+            { id: 207, type: 'mcq', q: 'استحب بعض السلف تغليب جانب .......... في حال الصحة :', options: ['الرجاء', 'التوكل', 'الخوف', 'العبادة'], ans: 2, exp: 'ابن القيم نقل أن السلف استحبوا أن يقوى جناح الخوف في حال الصحة، وجناح الرجاء عند الخروج من الدنيا.' },
+            { id: 208, type: 'mcq', q: 'ما حال بين الشخص وبين محارم الله :', options: ['الخوف المذموم', 'الخوف المحمود الصادق', 'التوبة النصوحة', 'الرجاء المفرط'], ans: 1, exp: 'الكتاب عرف الخوف المحمود الصادق بأنه ما حال بين صاحبه وبين محارم الله، فإذا زاد عن ذلك خيف منه اليأس والقنوط.' },
+            { id: 209, type: 'mcq', q: 'كان النبي ﷺ في تعامله مع زوجاته :', options: ['يساعدهن في تدبير شؤون المنزل', 'يتجمل لهن', 'يمازحهن', 'جميع الإجابات صحيحة'], ans: 3, exp: 'النبي ﷺ كان يخدم في بيته ويساعد أهله، ويتجمل لزوجاته ويمازحهن، فكل الخيارات صحيحة.' },
+            { id: 210, type: 'mcq', q: 'يدل قول الرسول الكريم ﷺ : (أصدقهم حياءً عثمان...) على :', options: ['اهتمامه بالموهوبين', 'اهتمامه بالفقراء', 'اهتمامه بالأطفال', 'اهتمامه بالمسافرين'], ans: 0, exp: 'الحديث ذكر الصحابة وأبرز ما تميز به كل واحد: أرحمهم أبو بكر، وأصدقهم حياء عثمان، وغيرهم. وهذا يدل على اهتمامه بالموهوبين وإبراز مواهبهم.' },
+            { id: 211, type: 'mcq', q: 'قال رسول الله ﷺ: (من قتل عصفورًا بغير حقه سأله الله عنه يوم القيامة)، قيل: ما حقه ؟ قال :', options: ['أن يطلقه', 'أن تذبحه فتأكله', 'أن يتصدق به', 'أن يبيعه'], ans: 1, exp: 'في الحديث نفسه: «حق العصفور أن تذبحه فتأكله، ولا تقطع رأسه فترمي به»، يعني ما تقتله عبثًا.' }
+        ];
+
+        // 2. STATE & LOCAL STORAGE PERSISTENCE
+        const STORAGE_KEY = 'islamic2_fastlane_v1';
+        let appState = {
+            mastered: [],
+            starred: [],
+            mistakes: [],
+            highScore: 0,
+            darkMode: false,
+            sound: true
+        };
+
+        function loadState() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    appState = { ...appState, ...parsed };
+                }
+            } catch (e) {
+                console.warn('Could not read localStorage', e);
+            }
+            applyTheme();
+            updateSoundUI();
+            updateStatsBar();
+        }
+
+        function saveState() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+            } catch (e) {}
+            updateStatsBar();
+        }
+
+        // 3. SOUND EFFECTS (Web Audio API - No external files needed)
+        let audioCtx = null;
+        function playTone(type) {
+            if (!appState.sound) return;
+            try {
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                const now = audioCtx.currentTime;
+                if (type === 'correct') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(523.25, now); // C5
+                    osc.frequency.setValueAtTime(659.25, now + 0.08); // E5
+                    gain.gain.setValueAtTime(0.12, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+                    osc.start(now);
+                    osc.stop(now + 0.25);
+                } else if (type === 'wrong') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(220, now);
+                    osc.frequency.setValueAtTime(165, now + 0.1);
+                    gain.gain.setValueAtTime(0.15, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+                    osc.start(now);
+                    osc.stop(now + 0.3);
+                } else if (type === 'click') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(440, now);
+                    gain.gain.setValueAtTime(0.05, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+                    osc.start(now);
+                    osc.stop(now + 0.06);
+                }
+            } catch (e) {}
+        }
+
+        function toggleSound() {
+            appState.sound = !appState.sound;
+            saveState();
+            updateSoundUI();
+            showToast(appState.sound ? 'تم تفعيل المؤثرات الصوتية 🔊' : 'تم كتم الصوت 🔇');
+        }
+
+        function updateSoundUI() {
+            const icon = document.getElementById('soundIcon');
+            if (icon) {
+                icon.className = appState.sound ? 'fa-solid fa-volume-high text-amber-400' : 'fa-solid fa-volume-xmark text-slate-400';
+            }
+        }
+
+        // 4. DARK MODE & TOAST
+        function toggleDarkMode() {
+            appState.darkMode = !appState.darkMode;
+            applyTheme();
+            saveState();
+        }
+
+        function applyTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            const text = document.getElementById('themeText');
+            if (appState.darkMode) {
+                html.classList.add('dark');
+                if (icon) icon.className = 'fa-solid fa-sun text-amber-400';
+                if (text) text.textContent = 'الوضع النهاري';
+            } else {
+                html.classList.remove('dark');
+                if (icon) icon.className = 'fa-solid fa-moon text-amber-300';
+                if (text) text.textContent = 'الوضع الليلي';
+            }
+        }
+
+        let toastTimeout;
+        function showToast(msg) {
+            const box = document.getElementById('toastBox');
+            const txt = document.getElementById('toastText');
+            txt.textContent = msg;
+            box.classList.remove('hidden');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => box.classList.add('hidden'), 2500);
+        }
+
+        // 5. STATS BAR UPDATER
+        function updateStatsBar() {
+            const mCount = appState.mastered.length;
+            const sCount = appState.starred.length;
+            const eCount = appState.mistakes.length;
+            const pct = Math.round((mCount / questionsData.length) * 100);
+
+            document.getElementById('statMastered').textContent = mCount;
+            document.getElementById('statStarred').textContent = sCount;
+            document.getElementById('statMistakes').textContent = eCount;
+            document.getElementById('statPercent').textContent = pct + '%';
+            document.getElementById('progressBar').style.width = pct + '%';
+
+            // Filter Pills counts
+            document.getElementById('pillStarCount').textContent = sCount;
+            document.getElementById('pillMistakeCount').textContent = eCount;
+            document.getElementById('pillUnmasteredCount').textContent = questionsData.length - mCount;
+
+            // Quiz Special Count
+            const specialSet = new Set([...appState.starred, ...appState.mistakes]);
+            const qsrcSpecial = document.getElementById('qsrcSpecialCount');
+            if (qsrcSpecial) qsrcSpecial.textContent = specialSet.size;
+
+            const hiScore = document.getElementById('highScoreDisplay');
+            if (hiScore) hiScore.textContent = appState.highScore || 0;
+        }
+
+        // 6. MODE SWITCHING
+        let currentMode = 'study';
+        function switchMode(mode) {
+            currentMode = mode;
+            const modes = ['study', 'quiz', 'flashcards', 'speed', 'traps'];
+            modes.forEach(m => {
+                const sec = document.getElementById('mode-' + m);
+                const tab = document.getElementById('tab-' + m);
+                if (m === mode) {
+                    sec.classList.remove('hidden');
+                    tab.className = 'mode-tab px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 shrink-0 transition bg-emerald-600 text-white shadow-md shadow-emerald-600/20';
+                } else {
+                    sec.classList.add('hidden');
+                    tab.className = 'mode-tab px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 shrink-0 transition text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800';
+                }
+            });
+
+            if (mode === 'study') renderStudyList();
+            if (mode === 'quiz') updateQuizSetupUI();
+            if (mode === 'flashcards') initFlashcards();
+            if (mode === 'speed') stopSpeedTimer();
+        }
+
+        // ==========================================================
+        // MODE 1 LOGIC: STUDY & BROWSE
+        // ==========================================================
+        let currentStudyFilter = 'all';
+        let hideAnswersInStudy = false;
+        let revealedInStudy = new Set();
+
+        function setStudyFilter(filter) {
+            currentStudyFilter = filter;
+            revealedInStudy.clear();
+            updateFilterPillsUI();
+            renderStudyList();
+        }
+
+        function updateFilterPillsUI() {
+            const filters = ['all', 'tf-false', 'tf-true', 'mcq', 'starred', 'mistakes', 'unmastered'];
+            filters.forEach(f => {
+                const btn = document.getElementById('filter-' + f);
+                if (!btn) return;
+                if (f === currentStudyFilter) {
+                    btn.className = 'filter-pill px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-emerald-600 text-white shadow-sm';
+                } else {
+                    btn.className = 'filter-pill px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700';
+                }
+            });
+        }
+
+        function toggleHideAnswers() {
+            hideAnswersInStudy = !hideAnswersInStudy;
+            revealedInStudy.clear();
+            const icon = document.getElementById('toggleAnswersIcon');
+            const text = document.getElementById('toggleAnswersText');
+            if (hideAnswersInStudy) {
+                icon.className = 'fa-solid fa-eye';
+                text.textContent = 'إظهار جميع الإجابات والشروحات';
+            } else {
+                icon.className = 'fa-solid fa-eye-slash';
+                text.textContent = 'إخفاء الإجابات لاختبار نفسك';
+            }
+            renderStudyList();
+        }
+
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            renderStudyList();
+        }
+
+        function getFilteredStudyQuestions() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            const clearBtn = document.getElementById('clearSearchBtn');
+            if (clearBtn) {
+                clearBtn.classList.toggle('hidden', query.length === 0);
+            }
+
+            return questionsData.filter(item => {
+                // Category filter
+                if (currentStudyFilter === 'tf-false' && !(item.type === 'tf' && item.id <= 66)) return false;
+                if (currentStudyFilter === 'tf-true' && !(item.type === 'tf' && item.id >= 67 && item.id <= 142)) return false;
+                if (currentStudyFilter === 'mcq' && item.type !== 'mcq') return false;
+                if (currentStudyFilter === 'starred' && !appState.starred.includes(item.id)) return false;
+                if (currentStudyFilter === 'mistakes' && !appState.mistakes.includes(item.id)) return false;
+                if (currentStudyFilter === 'unmastered' && appState.mastered.includes(item.id)) return false;
+
+                // Search query filter
+                if (query) {
+                    const idMatch = item.id.toString() === query || ('#' + item.id) === query;
+                    const textMatch = item.q.toLowerCase().includes(query) ||
+                                      (item.exp && item.exp.toLowerCase().includes(query)) ||
+                                      (item.options && item.options.some(o => o.toLowerCase().includes(query)));
+                    return idMatch || textMatch;
+                }
+                return true;
+            });
+        }
+
+        function renderStudyList() {
+            const list = getFilteredStudyQuestions();
+            document.getElementById('shownCount').textContent = list.length;
+            const container = document.getElementById('studyListContainer');
+
+            if (list.length === 0) {
+                container.innerHTML = `
+                    <div class="bg-white dark:bg-slate-900 p-12 rounded-3xl text-center border border-slate-200 dark:border-slate-800 space-y-3">
+                        <i class="fa-solid fa-box-open text-4xl text-slate-300 dark:text-slate-700"></i>
+                        <h3 class="text-lg font-bold">لا توجد أسئلة مطابقة لهذا الفلتر</h3>
+                        <p class="text-xs text-slate-400">جرب تغيير الفلتر أو مسح كلمة البحث</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const letters = ['أ', 'ب', 'ج', 'د'];
+            const htmlParts = list.map(item => {
+                const isMastered = appState.mastered.includes(item.id);
+                const isStarred = appState.starred.includes(item.id);
+                const isMistake = appState.mistakes.includes(item.id);
+                const isAnswerHidden = hideAnswersInStudy && !revealedInStudy.has(item.id);
+
+                // Category label
+                let catBadge = '';
+                if (item.type === 'tf') {
+                    catBadge = item.id <= 66
+                        ? `<span class="px-2.5 py-0.5 rounded-md bg-rose-500/10 text-rose-600 dark:text-rose-400 text-xs font-bold">صح وخطأ (القسم ١)</span>`
+                        : `<span class="px-2.5 py-0.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold">صح وخطأ (القسم ١)</span>`;
+                } else {
+                    catBadge = `<span class="px-2.5 py-0.5 rounded-md bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-bold">اختيار من متعدد (القسم ٢)</span>`;
+                }
+
+                // Answer Display
+                let answerSection = '';
+                if (isAnswerHidden) {
+                    answerSection = `
+                        <button onclick="revealSingleStudyAnswer(${item.id})" class="w-full py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 border border-dashed border-slate-300 dark:border-slate-700 font-bold text-xs flex items-center justify-center gap-2 transition">
+                            <i class="fa-solid fa-eye"></i> اضغط لإظهار الإجابة والشرح
+                        </button>
+                    `;
+                } else {
+                    if (item.type === 'tf') {
+                        const isTrue = item.ans === 'صواب';
+                        answerSection = `
+                            <div class="flex flex-wrap items-center gap-2 pt-1">
+                                <div class="px-4 py-1.5 rounded-xl font-black text-sm flex items-center gap-2 ${isTrue ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30' : 'bg-rose-500/15 text-rose-700 dark:text-rose-300 border border-rose-500/30'}">
+                                    <i class="fa-solid ${isTrue ? 'fa-circle-check' : 'fa-circle-xmark'}"></i>
+                                    <span>الإجابة: ${item.ans}</span>
+                                </div>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-700/70 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                <strong class="text-emerald-700 dark:text-emerald-400"><i class="fa-solid fa-circle-info ml-1"></i>الشرح:</strong> ${item.exp}
+                            </div>
+                        `;
+                    } else {
+                        const optionsHtml = item.options.map((opt, idx) => {
+                            const isCorrect = idx === item.ans;
+                            return `
+                                <div class="p-3 rounded-xl border text-xs sm:text-sm font-bold flex items-center justify-between gap-2 ${isCorrect ? 'bg-emerald-500/15 border-emerald-500 text-emerald-800 dark:text-emerald-200' : 'bg-slate-50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400'}">
+                                    <span><strong class="ml-1.5">${letters[idx]})</strong> ${opt}</span>
+                                    ${isCorrect ? '<i class="fa-solid fa-circle-check text-emerald-600 dark:text-emerald-400 text-base shrink-0"></i>' : ''}
+                                </div>
+                            `;
+                        }).join('');
+
+                        answerSection = `
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                                ${optionsHtml}
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-700/70 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                <strong class="text-emerald-700 dark:text-emerald-400"><i class="fa-solid fa-circle-info ml-1"></i>الشرح:</strong> ${item.exp}
+                            </div>
+                        `;
+                    }
+                }
+
+                return `
+                    <article id="qcard-${item.id}" class="bg-white dark:bg-slate-900 p-5 sm:p-6 rounded-2xl shadow-sm border transition ${isMastered ? 'border-emerald-500/40 bg-emerald-50/10 dark:bg-emerald-950/10' : 'border-slate-200 dark:border-slate-800'} space-y-3.5">
+                        <div class="flex items-center justify-between gap-2 flex-wrap">
+                            <div class="flex items-center gap-2">
+                                <span class="w-9 h-9 rounded-xl bg-emerald-600 text-white font-black text-xs flex items-center justify-center shadow-sm">#${item.id}</span>
+                                ${catBadge}
+                                ${isMistake ? '<span class="px-2 py-0.5 rounded bg-rose-500/10 text-rose-600 text-xs font-bold">⚠️ أخطأت فيه سابقاً</span>' : ''}
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <button onclick="toggleStar(${item.id})" class="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition ${isStarred ? 'bg-amber-500/15 border-amber-400 text-amber-600 dark:text-amber-300' : 'bg-slate-100 dark:bg-slate-800 border-transparent text-slate-500 hover:text-amber-500'}">
+                                    <i class="${isStarred ? 'fa-solid' : 'fa-regular'} fa-star"></i>
+                                    <span>مهم</span>
+                                </button>
+                                <button onclick="toggleMastered(${item.id})" class="px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition ${isMastered ? 'bg-emerald-600 border-emerald-600 text-white' : 'bg-slate-100 dark:bg-slate-800 border-transparent text-slate-500 hover:text-emerald-600'}">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>${isMastered ? 'متقن' : 'تحديد كمتقن'}</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <h3 class="text-base sm:text-lg font-bold leading-relaxed text-slate-800 dark:text-slate-100">
+                            ${item.q}
+                        </h3>
+
+                        ${answerSection}
+                    </article>
+                `;
+            });
+
+            container.innerHTML = htmlParts.join('');
+        }
+
+        function revealSingleStudyAnswer(id) {
+            revealedInStudy.add(id);
+            renderStudyList();
+        }
+
+        function toggleMastered(id) {
+            playTone('click');
+            const idx = appState.mastered.indexOf(id);
+            if (idx > -1) {
+                appState.mastered.splice(idx, 1);
+            } else {
+                appState.mastered.push(id);
+            }
+            saveState();
+            renderStudyList();
+        }
+
+        function toggleStar(id) {
+            playTone('click');
+            const idx = appState.starred.indexOf(id);
+            if (idx > -1) {
+                appState.starred.splice(idx, 1);
+            } else {
+                appState.starred.push(id);
+            }
+            saveState();
+            renderStudyList();
+        }
+
+        function markAllCurrentFilterMastered() {
+            const list = getFilteredStudyQuestions();
+            list.forEach(item => {
+                if (!appState.mastered.includes(item.id)) {
+                    appState.mastered.push(item.id);
+                }
+            });
+            saveState();
+            renderStudyList();
+            showToast(`تم تحديد ${list.length} سؤال كمتقن ✅`);
+        }
+
+        function jumpToQuestion() {
+            const val = parseInt(document.getElementById('jumpInput').value);
+            if (!val || val < 1 || val > 211) {
+                showToast('أدخل رقم سؤال بين 1 و 211');
+                return;
+            }
+            if (currentStudyFilter !== 'all') {
+                setStudyFilter('all');
+            }
+            setTimeout(() => {
+                const el = document.getElementById('qcard-' + val);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    el.classList.add('ring-4', 'ring-amber-400');
+                    setTimeout(() => el.classList.remove('ring-4', 'ring-amber-400'), 2000);
+                }
+            }, 100);
+        }
+
+        // ==========================================================
+        // MODE 2 LOGIC: INTERACTIVE SMART QUIZ
+        // ==========================================================
+        let quizConfig = {
+            source: 'all',
+            count: 30
+        };
+        let activeQuizList = [];
+        let quizIndex = 0;
+        let quizRight = 0;
+        let quizWrong = 0;
+        let quizStreak = 0;
+        let quizSessionMistakes = [];
+        let quizAnswered = false;
+
+        function selectQuizSource(src) {
+            quizConfig.source = src;
+            updateQuizSetupUI();
+        }
+
+        function selectQuizCount(cnt) {
+            quizConfig.count = cnt;
+            updateQuizSetupUI();
+        }
+
+        function updateQuizSetupUI() {
+            const sources = ['all', 'tf-all', 'tf-false', 'tf-true', 'mcq', 'mistakes'];
+            sources.forEach(s => {
+                const btn = document.getElementById('qsrc-' + s);
+                if (!btn) return;
+                if (s === quizConfig.source) {
+                    btn.className = 'qsrc-btn p-3.5 rounded-xl border-2 border-emerald-600 bg-emerald-500/10 text-emerald-800 dark:text-emerald-200 text-right font-bold text-sm flex items-center justify-between transition';
+                } else {
+                    btn.className = 'qsrc-btn p-3.5 rounded-xl border-2 border-slate-200 dark:border-slate-800 hover:border-emerald-400 text-right font-bold text-sm flex items-center justify-between transition';
+                }
+            });
+
+            const counts = [15, 30, 50, 999];
+            counts.forEach(c => {
+                const btn = document.getElementById('qcnt-' + c);
+                if (!btn) return;
+                if (c === quizConfig.count) {
+                    btn.className = 'qcnt-btn py-2.5 rounded-xl border-2 border-emerald-600 bg-emerald-600 text-white font-bold text-sm transition';
+                } else {
+                    btn.className = 'qcnt-btn py-2.5 rounded-xl border-2 border-slate-200 dark:border-slate-800 hover:border-emerald-400 font-bold text-sm transition';
+                }
+            });
+        }
+
+        function shuffleArray(arr) {
+            const copy = [...arr];
+            for (let i = copy.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [copy[i], copy[j]] = [copy[j], copy[i]];
+            }
+            return copy;
+        }
+
+        function startQuiz(customPool = null) {
+            let pool = [];
+            if (customPool) {
+                pool = [...customPool];
+            } else {
+                if (quizConfig.source === 'all') pool = [...questionsData];
+                else if (quizConfig.source === 'tf-all') pool = questionsData.filter(q => q.type === 'tf');
+                else if (quizConfig.source === 'tf-false') pool = questionsData.filter(q => q.type === 'tf' && q.id <= 66);
+                else if (quizConfig.source === 'tf-true') pool = questionsData.filter(q => q.type === 'tf' && q.id >= 67 && q.id <= 142);
+                else if (quizConfig.source === 'mcq') pool = questionsData.filter(q => q.type === 'mcq');
+                else if (quizConfig.source === 'mistakes') {
+                    const specialIds = new Set([...appState.mistakes, ...appState.starred]);
+                    pool = questionsData.filter(q => specialIds.has(q.id));
+                }
+            }
+
+            if (pool.length === 0) {
+                showToast('لا توجد أسئلة في هذا القسم حالياً! جرب قسماً آخر.');
+                return;
+            }
+
+            const doShuffle = document.getElementById('quizShuffleToggle').checked;
+            if (doShuffle) {
+                pool = shuffleArray(pool);
+            }
+
+            if (!customPool && quizConfig.count !== 999) {
+                pool = pool.slice(0, quizConfig.count);
+            }
+
+            activeQuizList = pool;
+            quizIndex = 0;
+            quizRight = 0;
+            quizWrong = 0;
+            quizStreak = 0;
+            quizSessionMistakes = [];
+
+            document.getElementById('quizSetupPanel').classList.add('hidden');
+            document.getElementById('quizResultPanel').classList.add('hidden');
+            document.getElementById('quizArena').classList.remove('hidden');
+
+            renderQuizQuestion();
+        }
+
+        function renderQuizQuestion() {
+            quizAnswered = false;
+            const item = activeQuizList[quizIndex];
+            document.getElementById('quizCurrentIdx').textContent = quizIndex + 1;
+            document.getElementById('quizTotalCount').textContent = activeQuizList.length;
+            document.getElementById('quizStreak').textContent = quizStreak;
+            document.getElementById('quizRightCount').textContent = quizRight;
+            document.getElementById('quizWrongCount').textContent = quizWrong;
+
+            const pct = Math.round((quizIndex / activeQuizList.length) * 100);
+            document.getElementById('quizProgressBar').style.width = pct + '%';
+
+            document.getElementById('quizBadge').textContent = `سؤال #${item.id} • ${item.type === 'tf' ? 'صح أو خطأ' : 'اختيار من متعدد'}`;
+            document.getElementById('quizQuestionText').textContent = item.q;
+
+            // Star icon
+            const starBtn = document.getElementById('quizStarBtn');
+            const isStarred = appState.starred.includes(item.id);
+            starBtn.innerHTML = `<i class="${isStarred ? 'fa-solid text-amber-400' : 'fa-regular'} fa-star"></i>`;
+
+            document.getElementById('quizExplanationBox').classList.add('hidden');
+            document.getElementById('quizNextWrapper').classList.add('hidden');
+
+            const optsContainer = document.getElementById('quizOptionsContainer');
+            if (item.type === 'tf') {
+                optsContainer.innerHTML = `
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="submitQuizAnswer('صواب', this)" class="quiz-opt-btn p-4 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-emerald-500 font-black text-lg flex items-center justify-center gap-2 transition">
+                            <i class="fa-solid fa-circle-check text-emerald-500"></i> صواب
+                        </button>
+                        <button onclick="submitQuizAnswer('خطأ', this)" class="quiz-opt-btn p-4 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-rose-500 font-black text-lg flex items-center justify-center gap-2 transition">
+                            <i class="fa-solid fa-circle-xmark text-rose-500"></i> خطأ
+                        </button>
+                    </div>
+                `;
+            } else {
+                const letters = ['أ', 'ب', 'ج', 'د'];
+                optsContainer.innerHTML = item.options.map((opt, idx) => `
+                    <button onclick="submitQuizAnswer(${idx}, this)" class="quiz-opt-btn w-full p-4 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-emerald-500 text-right font-bold text-base flex items-center justify-between transition">
+                        <span><strong class="ml-2 text-emerald-600 dark:text-emerald-400">${letters[idx]})</strong> ${opt}</span>
+                    </button>
+                `).join('');
+            }
+        }
+
+        function submitQuizAnswer(choice, btnElement) {
+            if (quizAnswered) return;
+            quizAnswered = true;
+
+            const item = activeQuizList[quizIndex];
+            const isCorrect = choice === item.ans;
+
+            const allBtns = document.querySelectorAll('#quizOptionsContainer .quiz-opt-btn');
+            allBtns.forEach((b, idx) => {
+                b.disabled = true;
+                if (item.type === 'tf') {
+                    const btnVal = idx === 0 ? 'صواب' : 'خطأ';
+                    if (btnVal === item.ans) {
+                        b.className = 'quiz-opt-btn p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 font-black text-lg flex items-center justify-center gap-2';
+                    }
+                } else {
+                    if (idx === item.ans) {
+                        b.className = 'quiz-opt-btn w-full p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-500/15 text-emerald-800 dark:text-emerald-200 text-right font-bold text-base flex items-center justify-between';
+                    }
+                }
+            });
+
+            const expBox = document.getElementById('quizExplanationBox');
+            const titleEl = document.getElementById('quizFeedbackTitle');
+            const expTextEl = document.getElementById('quizExplanationText');
+
+            if (isCorrect) {
+                playTone('correct');
+                quizRight++;
+                quizStreak++;
+                // Mark mastered automatically
+                if (!appState.mastered.includes(item.id)) appState.mastered.push(item.id);
+                // Remove from mistakes if present
+                const mIdx = appState.mistakes.indexOf(item.id);
+                if (mIdx > -1) appState.mistakes.splice(mIdx, 1);
+
+                expBox.className = 'p-4 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-900 dark:text-emerald-100 space-y-1 animate-pop';
+                titleEl.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500"></i> إجابة صحيحة! أحسنت`;
+            } else {
+                playTone('wrong');
+                quizWrong++;
+                quizStreak = 0;
+                quizSessionMistakes.push(item);
+                if (!appState.mistakes.includes(item.id)) appState.mistakes.push(item.id);
+
+                btnElement.classList.add('border-rose-500', 'bg-rose-500/15', 'text-rose-700', 'dark:text-rose-300');
+                expBox.className = 'p-4 rounded-2xl border border-rose-500/30 bg-rose-500/10 text-rose-900 dark:text-rose-100 space-y-1 animate-pop';
+                titleEl.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-500"></i> إجابة خاطئة! تم حفظ السؤال في صندوق أخطائك`;
+            }
+
+            expTextEl.textContent = item.exp;
+            expBox.classList.remove('hidden');
+            document.getElementById('quizNextWrapper').classList.remove('hidden');
+
+            document.getElementById('quizStreak').textContent = quizStreak;
+            document.getElementById('quizRightCount').textContent = quizRight;
+            document.getElementById('quizWrongCount').textContent = quizWrong;
+            saveState();
+        }
+
+        function nextQuizQuestion() {
+            quizIndex++;
+            if (quizIndex >= activeQuizList.length) {
+                showQuizResults();
+            } else {
+                renderQuizQuestion();
+            }
+        }
+
+        function showQuizResults() {
+            document.getElementById('quizArena').classList.add('hidden');
+            const resPanel = document.getElementById('quizResultPanel');
+            resPanel.classList.remove('hidden');
+
+            const total = activeQuizList.length;
+            const pct = Math.round((quizRight / total) * 100);
+
+            document.getElementById('resRight').textContent = quizRight;
+            document.getElementById('resWrong').textContent = quizWrong;
+            document.getElementById('resScore').textContent = pct + '%';
+
+            const title = document.getElementById('quizResultTitle');
+            const sub = document.getElementById('quizResultSubtitle');
+            if (pct >= 90) {
+                title.textContent = 'ما شاء الله! أداء أسطوري 🌟';
+                sub.textContent = 'أنت جاهز للدرجة الكاملة بإذن الله!';
+            } else if (pct >= 75) {
+                title.textContent = 'مستوى رائع جداً! 👏';
+                sub.textContent = 'راجع الأسئلة التي أخطأت فيها لتصل إلى ١٠٠٪.';
+            } else {
+                title.textContent = 'بداية طيبة! استمر بالمراجعة 💪';
+                sub.textContent = 'تم حفظ جميع الأسئلة التي أخطأت بها في صندوق الأخطاء لتعيدها بسهولة.';
+            }
+
+            const retryBtn = document.getElementById('retryMistakesBtn');
+            if (quizSessionMistakes.length > 0) {
+                retryBtn.classList.remove('hidden');
+            } else {
+                retryBtn.classList.add('hidden');
+            }
+        }
+
+        function retryQuizMistakes() {
+            startQuiz(quizSessionMistakes);
+        }
+
+        function restartQuizSetup() {
+            document.getElementById('quizArena').classList.add('hidden');
+            document.getElementById('quizResultPanel').classList.add('hidden');
+            document.getElementById('quizSetupPanel').classList.remove('hidden');
+            updateQuizSetupUI();
+        }
+
+        function quitQuiz() {
+            restartQuizSetup();
+        }
+
+        function toggleStarCurrentQuiz() {
+            const item = activeQuizList[quizIndex];
+            if (!item) return;
+            toggleStar(item.id);
+            const isStarred = appState.starred.includes(item.id);
+            document.getElementById('quizStarBtn').innerHTML = `<i class="${isStarred ? 'fa-solid text-amber-400' : 'fa-regular'} fa-star"></i>`;
+        }
+
+        // ==========================================================
+        // MODE 3 LOGIC: 3D FLASHCARDS
+        // ==========================================================
+        let fcList = [...questionsData];
+        let fcIndex = 0;
+        let fcFlipped = false;
+
+        function initFlashcards() {
+            const filter = document.getElementById('fcFilterSelect').value;
+            if (filter === 'all') fcList = [...questionsData];
+            else if (filter === 'tf-false') fcList = questionsData.filter(q => q.type === 'tf' && q.id <= 66);
+            else if (filter === 'tf-true') fcList = questionsData.filter(q => q.type === 'tf' && q.id >= 67 && q.id <= 142);
+            else if (filter === 'mcq') fcList = questionsData.filter(q => q.type === 'mcq');
+            else if (filter === 'starred') fcList = questionsData.filter(q => appState.starred.includes(q.id));
+            else if (filter === 'mistakes') fcList = questionsData.filter(q => appState.mistakes.includes(q.id));
+
+            if (fcList.length === 0) {
+                showToast('لا توجد بطاقات في هذا القسم حالياً، سيتم عرض الكل.');
+                document.getElementById('fcFilterSelect').value = 'all';
+                fcList = [...questionsData];
+            }
+            fcIndex = 0;
+            renderFlashcard();
+        }
+
+        function shuffleFlashcards() {
+            fcList = shuffleArray(fcList);
+            fcIndex = 0;
+            renderFlashcard();
+            showToast('تم خلط البطاقات عشوائياً 🔀');
+        }
+
+        function renderFlashcard() {
+            fcFlipped = false;
+            document.getElementById('fcInner').classList.remove('rotate-y-180');
+
+            const item = fcList[fcIndex];
+            document.getElementById('fcCurrentIndex').textContent = fcIndex + 1;
+            document.getElementById('fcTotalCount').textContent = fcList.length;
+            document.getElementById('fcFrontBadge').textContent = `سؤال #${item.id} • ${item.type === 'tf' ? 'صح أو خطأ' : 'اختيار من متعدد'}`;
+            document.getElementById('fcFrontQuestion').textContent = item.q;
+
+            const choicesEl = document.getElementById('fcFrontChoices');
+            const letters = ['أ', 'ب', 'ج', 'د'];
+            if (item.type === 'mcq') {
+                choicesEl.innerHTML = item.options.map((o, i) => `<div class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800">${letters[i]}) ${o}</div>`).join('');
+            } else {
+                choicesEl.innerHTML = `<div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-600 font-bold">أ) صواب</div><div class="p-2 rounded-lg bg-rose-500/10 text-rose-600 font-bold">ب) خطأ</div>`;
+            }
+
+            const ansText = item.type === 'tf' ? item.ans : `${letters[item.ans]}) ${item.options[item.ans]}`;
+            document.getElementById('fcBackAnswer').textContent = ansText;
+            document.getElementById('fcBackExplanation').textContent = item.exp;
+        }
+
+        function flipFlashcard() {
+            playTone('click');
+            fcFlipped = !fcFlipped;
+            document.getElementById('fcInner').classList.toggle('rotate-y-180', fcFlipped);
+        }
+
+        function nextFlashcard() {
+            fcIndex = (fcIndex + 1) % fcList.length;
+            renderFlashcard();
+        }
+
+        function prevFlashcard() {
+            fcIndex = (fcIndex - 1 + fcList.length) % fcList.length;
+            renderFlashcard();
+        }
+
+        function markFcMasteredAndNext() {
+            const item = fcList[fcIndex];
+            if (!appState.mastered.includes(item.id)) {
+                appState.mastered.push(item.id);
+                saveState();
+            }
+            playTone('correct');
+            nextFlashcard();
+        }
+
+        // Keyboard shortcuts for flashcards
+        window.addEventListener('keydown', (e) => {
+            if (currentMode !== 'flashcards') return;
+            if (e.code === 'Space') {
+                e.preventDefault();
+                flipFlashcard();
+            } else if (e.code === 'ArrowLeft') {
+                nextFlashcard();
+            } else if (e.code === 'ArrowRight') {
+                prevFlashcard();
+            }
+        });
+
+        // ==========================================================
+        // MODE 4 LOGIC: 60-SECOND SPEED CHALLENGE
+        // ==========================================================
+        let speedInterval = null;
+        let speedTimeLeft = 60;
+        let speedScore = 0;
+        let speedMult = 1;
+        let speedPool = [];
+        let speedCurrent = null;
+
+        function startSpeedChallenge() {
+            speedPool = shuffleArray(questionsData);
+            speedTimeLeft = 60;
+            speedScore = 0;
+            speedMult = 1;
+
+            document.getElementById('speedStartBox').classList.add('hidden');
+            document.getElementById('speedPlayBox').classList.remove('hidden');
+
+            updateSpeedHUD();
+            nextSpeedQuestion();
+
+            clearInterval(speedInterval);
+            speedInterval = setInterval(() => {
+                speedTimeLeft--;
+                updateSpeedHUD();
+                if (speedTimeLeft <= 0) {
+                    endSpeedChallenge();
+                }
+            }, 1000);
+        }
+
+        function stopSpeedTimer() {
+            clearInterval(speedInterval);
+        }
+
+        function updateSpeedHUD() {
+            document.getElementById('speedTimer').textContent = speedTimeLeft;
+            document.getElementById('speedMultiplier').textContent = speedMult;
+            document.getElementById('speedScore').textContent = speedScore;
+        }
+
+        function nextSpeedQuestion() {
+            if (speedPool.length === 0) speedPool = shuffleArray(questionsData);
+            speedCurrent = speedPool.pop();
+
+            document.getElementById('speedQBadge').textContent = `سؤال #${speedCurrent.id}`;
+            document.getElementById('speedQText').textContent = speedCurrent.q;
+
+            const opts = document.getElementById('speedOptions');
+            if (speedCurrent.type === 'tf') {
+                opts.innerHTML = `
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="answerSpeed('صواب')" class="p-4 rounded-2xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 font-black text-lg text-emerald-700 dark:text-emerald-300 transition">صواب</button>
+                        <button onclick="answerSpeed('خطأ')" class="p-4 rounded-2xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 font-black text-lg text-rose-700 dark:text-rose-300 transition">خطأ</button>
+                    </div>
+                `;
+            } else {
+                const letters = ['أ', 'ب', 'ج', 'د'];
+                opts.innerHTML = speedCurrent.options.map((o, idx) => `
+                    <button onclick="answerSpeed(${idx})" class="w-full p-3.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-emerald-500/15 border border-slate-200 dark:border-slate-700 text-right font-bold text-sm transition">
+                        <strong class="ml-1.5 text-emerald-600">${letters[idx]})</strong> ${o}
+                    </button>
+                `).join('');
+            }
+        }
+
+        function answerSpeed(choice) {
+            const isCorrect = choice === speedCurrent.ans;
+            if (isCorrect) {
+                playTone('correct');
+                speedScore += 10 * speedMult;
+                speedMult = Math.min(5, speedMult + 1);
+            } else {
+                playTone('wrong');
+                speedMult = 1;
+                if (!appState.mistakes.includes(speedCurrent.id)) {
+                    appState.mistakes.push(speedCurrent.id);
+                    saveState();
+                }
+            }
+            updateSpeedHUD();
+            nextSpeedQuestion();
+        }
+
+        function endSpeedChallenge() {
+            stopSpeedTimer();
+            if (speedScore > (appState.highScore || 0)) {
+                appState.highScore = speedScore;
+                saveState();
+            }
+            document.getElementById('speedPlayBox').classList.add('hidden');
+            document.getElementById('speedStartBox').classList.remove('hidden');
+            showToast(`انتهى الوقت! حققت ${speedScore} نقطة 🏆`);
+        }
+
+        // ==========================================================
+        // RESET MODAL
+        // ==========================================================
+        function openResetModal() {
+            document.getElementById('resetModal').classList.remove('hidden');
+        }
+        function closeResetModal() {
+            document.getElementById('resetModal').classList.add('hidden');
+        }
+        function confirmResetProgress() {
+            appState.mastered = [];
+            appState.starred = [];
+            appState.mistakes = [];
+            appState.highScore = 0;
+            saveState();
+            closeResetModal();
+            renderStudyList();
+            showToast('تم تصفير التقدم بنجاح');
+        }
+
+        // Initialize App on Load
+        window.onload = function() {
+            loadState();
+            updateFilterPillsUI();
+            switchMode('study');
+        };
+    </script>
+</body>
+</html>
